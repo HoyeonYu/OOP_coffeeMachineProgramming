@@ -486,7 +486,7 @@ public class UserPanel {
 		  btn1000.addActionListener(new ActionListener() {
 					  @Override
 					  public void actionPerformed(ActionEvent e) {
-						  MoneyManager.calculateTotalInput(oldInput, 1000);
+						  //MoneyManager.calculateTotalInput(oldInput, 1000);
 					  }
 				  });
 		  
