@@ -1,7 +1,6 @@
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -399,17 +398,54 @@ public class UserPanel {
 				  darkGrayPWJPanel.add(whitePWJPanel);
 				  whitePWJPanel.setBounds(10, 10, 300, 440);
 				  whitePWJPanel.setLayout(null);
+				  
+				  JTextPane passwordLEDJTextPane = new JTextPane();
+				  passwordLEDJTextPane.setBackground(new Color(255, 255, 255));
+				  passwordLEDJTextPane.setLocation(320, 70);
+				  passwordLEDJTextPane.setSize(170, 45);
+				  passwordLEDJTextPane.setVisible(true);
+				  darkGrayPWJPanel.add(passwordLEDJTextPane);
+				  
+				  JPanel passwordPanel = new JPanel();
+				  passwordPanel.setLayout(new GridLayout(4, 3, 2, 2));
+				  passwordPanel.setBackground(new Color(255, 255, 255));
+				  passwordPanel.setLocation(320, 150);
+				  passwordPanel.setSize(170, 200);
+				  
+				  String passwordButtonArr[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#"};
+				  
+				  for (int i = 0; i < 12; i++) {
+					  JButton numButton = new JButton(passwordButtonArr[i]);
+					  passwordPanel.add(numButton);				  
+					  
+					  numButton.addActionListener(new ActionListener() {
+						  @Override 
+						  public void actionPerformed(ActionEvent e) {
+							  String prevText = passwordLEDJTextPane.getText();
+							  passwordLEDJTextPane.setText(prevText + numButton.getText());
+						  }
+					  });
+				  }
+
+				  darkGrayPWJPanel.add(passwordPanel);
+				  
 					  
 				  JButton openBtn = new JButton("¿­±â");		  
 				  openBtn.setBackground(Color.DARK_GRAY); 
 				  openBtn.setForeground(new Color(255, 255, 255)); 
 				  openBtn.setBounds(340, 430, 60, 20);
 				  darkGrayPWJPanel.add(openBtn);
-				  
+
 				  openBtn.addActionListener(new ActionListener() {
-					  @Override 
+					  @Override
 					  public void actionPerformed(ActionEvent e) {
+						  if (passwordLEDJTextPane.getText().equals(password)) {
+							  
+						  }
 						  
+						  else {
+							  passwordLEDJTextPane.setText("");
+						  }
 					  }
 				  });
 				  
@@ -420,16 +456,14 @@ public class UserPanel {
 				  darkGrayPWJPanel.add(closeBtn);
 				  
 				  closeBtn.addActionListener(new ActionListener() {
-					  @Override 
+					  @Override
 					  public void actionPerformed(ActionEvent e) {
-						  darkGrayPWJPanel.setVisible(false);
+						  //darkGrayPWJPanel.setVisible(false);
 						  darkGrayJPanel.setVisible(true);
 					  }
 				  });
 			  }
 		  });
-		  
-		  
 	}
 	
 	
@@ -500,7 +534,7 @@ public class UserPanel {
 	private JButton btnBlackTea = new JButton("O");
 	private JButton btnCocoa = new JButton("O");
 	
-	private String password = "";
+	private String password = "1234";
 	private JTextField textareaPassword = new JTextField();
 	private String passwordEntered = "";
 
