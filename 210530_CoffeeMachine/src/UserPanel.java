@@ -483,6 +483,12 @@ public class UserPanel {
 		  btn1000.setSize(80,30);
 		  btn1000.setVisible(true);
 		  walletPanel.add(btn1000);	
+		  btn1000.addActionListener(new ActionListener() {
+					  @Override
+					  public void actionPerformed(ActionEvent e) {
+						  MoneyManager.calculateTotalInput(oldInput, 1000);
+					  }
+				  });
 		  
 		  ImageIcon ic_500won = new ImageIcon(new ImageIcon("won_500.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 		  btn500.setIcon(ic_500won);
@@ -490,6 +496,12 @@ public class UserPanel {
 		  btn500.setSize(50,50);
 		  btn500.setVisible(true);
 		  walletPanel.add(btn500);
+		  btn500.addActionListener(new ActionListener() {
+			  @Override
+			  public void actionPerformed(ActionEvent e) {
+				  MoneyManager.count500++;
+			  }
+		  });
 		  
 		  ImageIcon ic_100won = new ImageIcon(new ImageIcon("won_100.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 		  btn100.setIcon(ic_100won);
@@ -497,6 +509,12 @@ public class UserPanel {
 		  btn100.setSize(50,50);
 		  btn100.setVisible(true);
 		  walletPanel.add(btn100);
+		  btn100.addActionListener(new ActionListener() {
+			  @Override
+			  public void actionPerformed(ActionEvent e) {
+				  MoneyManager.count100++;
+			  }
+		  });
 		  
 		  ImageIcon ic_50won = new ImageIcon(new ImageIcon("won_50.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 		  btn50.setIcon(ic_50won);
@@ -504,6 +522,12 @@ public class UserPanel {
 		  btn50.setSize(50,50);
 		  btn50.setVisible(true);
 		  walletPanel.add(btn50);
+		  btn50.addActionListener(new ActionListener() {
+			  @Override
+			  public void actionPerformed(ActionEvent e) {
+				  MoneyManager.count50++;
+			  }
+		  });
 		  
 		  ImageIcon ic_10won = new ImageIcon(new ImageIcon("won_10.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 		  btn10.setIcon(ic_10won);
@@ -511,6 +535,12 @@ public class UserPanel {
 		  btn10.setSize(50,50);
 		  btn10.setVisible(true);
 		  walletPanel.add(btn10);
+		  btn10.addActionListener(new ActionListener() {
+			  @Override
+			  public void actionPerformed(ActionEvent e) {
+				  MoneyManager.count10++;
+			  }
+		  });
 
 		  	  
 		  walletPanel.repaint();

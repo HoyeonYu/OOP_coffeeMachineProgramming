@@ -15,27 +15,27 @@ public class MoneyManager {
     /**
      * 
      */
-    public int count1000 = 0;
+    public static int count1000 = 0;
 
     /**
      * 
      */
-    public int count500 = 600;
+    public static int count500 = 600;
 
     /**
      * 
      */
-    public int count100 = 600;
+    public static int count100 = 600;
 
     /**
      * 
      */
-    public int count50 = 300;
+    public static int count50 = 300;
 
     /**
      * 
      */
-    public int count10 = 300;
+    public static int count10 = 300;
 
 
     /**
@@ -50,9 +50,12 @@ public class MoneyManager {
      * @param newInput 
      * @return
      */
-    public int calculateTotalInput(int oldInput, int newInput) {
+    public static int calculateTotalInput(int oldInput, int newInput) {
         // TODO implement here
-        return 0;
+    	
+    	oldInput+=newInput;
+    	
+        return oldInput;
     }
 
     /**
