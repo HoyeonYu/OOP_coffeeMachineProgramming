@@ -6,7 +6,6 @@ public class MoneyManager {
     	
     }
 
-
     public static int count1000 = 0;
     public static int count500 = 600;
     public static int count100 = 600;
@@ -64,9 +63,8 @@ public class MoneyManager {
         return 0;
     }
 
-    public int getCoinStackTotal() {
-        // TODO implement here
-        return 0;
+    public static int getCoinStackTotal() {
+    	return (count1000 + count500 + count50 + count10);
     }
 
 }

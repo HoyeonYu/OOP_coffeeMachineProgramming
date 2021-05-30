@@ -462,7 +462,7 @@ public class UserPanel {
 							  waterMaxTempJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(waterMaxTempJLabel); 
 
-							  JTextField waterMaxTempJTextField = new JTextField();
+							  JTextField waterMaxTempJTextField = new JTextField("98");
 							  waterMaxTempJTextField.setForeground(new Color(0, 0, 0));
 							  waterMaxTempJTextField.setLocation(320, 50);
 							  waterMaxTempJTextField.setSize(170, 25);
@@ -490,11 +490,12 @@ public class UserPanel {
 							  totalCountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(totalCountJLabel); 
 							  
-							  JTextField totalCountJTextField = new JTextField();
+							  JTextField totalCountJTextField = new JTextField(Integer.toString(MoneyManager.getCoinStackTotal()));
 							  totalCountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
 							  totalCountJTextField.setLocation(400, 170);
 							  totalCountJTextField.setSize(90, 25);
 							  totalCountJTextField.setVisible(true);
+							  totalCountJTextField.setEnabled(false);
 							  darkGrayControlJPanel.add(totalCountJTextField); 
 
 							  JLabel p1000CountJLabel = new JLabel("1000원");
@@ -513,7 +514,6 @@ public class UserPanel {
 							  p1000CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("1000")));
 							  darkGrayControlJPanel.add(p1000CountJTextField); 
 
-
 							  JLabel p500CountJLabel = new JLabel("500원");
 							  p500CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
 							  p500CountJLabel.setForeground(new Color(255, 255, 255));
@@ -529,7 +529,6 @@ public class UserPanel {
 							  p500CountJTextField.setVisible(true);
 							  p500CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("500")));
 							  darkGrayControlJPanel.add(p500CountJTextField); 
-
 
 							  JLabel p100CountJLabel = new JLabel("100원");
 							  p100CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -547,23 +546,37 @@ public class UserPanel {
 							  p100CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("100")));
 							  darkGrayControlJPanel.add(p100CountJTextField); 
 
+							  JLabel p50CountJLabel = new JLabel("50원");
+							  p50CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
+							  p50CountJLabel.setForeground(new Color(255, 255, 255));
+							  p50CountJLabel.setLocation(320, 290);
+							  p50CountJLabel.setSize(60, 25);
+							  p50CountJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(p50CountJLabel); 
+
+							  JTextField p50CountJTextField = new JTextField();
+							  p50CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
+							  p50CountJTextField.setLocation(400, 290);
+							  p50CountJTextField.setSize(90, 25);
+							  p50CountJTextField.setVisible(true);
+							  p50CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("50")));
+							  darkGrayControlJPanel.add(p50CountJTextField); 
 
 							  JLabel p10CountJLabel = new JLabel("10원");
 							  p10CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
 							  p10CountJLabel.setForeground(new Color(255, 255, 255));
-							  p10CountJLabel.setLocation(320, 290);
+							  p10CountJLabel.setLocation(320, 320);
 							  p10CountJLabel.setSize(60, 25);
 							  p10CountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(p10CountJLabel); 
 
 							  JTextField p10CountJTextField = new JTextField();
 							  p10CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
-							  p10CountJTextField.setLocation(400, 290);
+							  p10CountJTextField.setLocation(400, 320);
 							  p10CountJTextField.setSize(90, 25);
 							  p10CountJTextField.setVisible(true);
 							  p10CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("10")));
 							  darkGrayControlJPanel.add(p10CountJTextField); 
-
 							  
 							  JButton controlAdminApplyBtn = new JButton("적용");		  
 							  controlAdminApplyBtn.setBackground(Color.DARK_GRAY); 
@@ -574,7 +587,20 @@ public class UserPanel {
 							  controlAdminApplyBtn.addActionListener(new ActionListener() {
 								  @Override
 								  public void actionPerformed(ActionEvent e) {
+									  CupManager.CupCount = (int) cupCount.getValue();
+									  try {
+										  MoneyManager.count1000 = Integer.parseInt(p1000CountJTextField.getText());
+										  MoneyManager.count500 = Integer.parseInt(p500CountJTextField.getText());
+										  MoneyManager.count100 = Integer.parseInt(p100CountJTextField.getText());
+										  MoneyManager.count50 = Integer.parseInt(p50CountJTextField.getText());
+										  MoneyManager.count10 = Integer.parseInt(p10CountJTextField.getText());
+										  System.out.println(MoneyManager.count1000);
+										  totalCountJTextField.setText(Integer.toString(MoneyManager.getCoinStackTotal()));
+									  } 
 									  
+									  catch (NumberFormatException e2) {
+										  System.out.println("Num Exception");
+									  }
 								  }
 							  });
 							  
