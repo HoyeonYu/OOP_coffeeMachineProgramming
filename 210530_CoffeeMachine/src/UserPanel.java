@@ -465,7 +465,7 @@ public class UserPanel {
 			  }
 		  });
 		  
-		  /**********************My Wallet Start**************************/
+		  /**********************My Wallet**************************/
 		  JPanel walletPanel = new JPanel();		
 		  panelWrapper.add(walletPanel);
 		  //walletPanel.setBackground(new Color(255,0,0));
@@ -515,7 +515,27 @@ public class UserPanel {
 		  	  
 		  walletPanel.repaint();
 
-		  /**********************My Wallet End****************************/
+		  /**********************refresh button***************************/
+		  
+		  ImageIcon ic_refresh = new ImageIcon(new ImageIcon("refresh.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		  btnChange.setIcon(ic_refresh);
+		  btnChange.setBackground(Color.LIGHT_GRAY);
+		  btnChange.setLocation(380, 250);
+		  btnChange.setSize(50,50);
+		  btnChange.setVisible(true);
+		  darkGrayJPanel.add(btnChange);		  	  
+		  darkGrayJPanel.repaint();
+		  
+		  /**********************showChange button************************/
+		  
+		  changeOut.setText(Integer.toString(MoneyManager.calculateChange(0, 0)));
+		  changeOut.setForeground(Color.WHITE);
+		  changeOut.setBackground(Color.BLACK);
+		  changeOut.setLocation(360, 320);
+		  changeOut.setSize(90,50);
+		  changeOut.setVisible(true);
+		  darkGrayJPanel.add(changeOut);  	  
+		  darkGrayJPanel.repaint();
 	}
 	
 	
