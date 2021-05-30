@@ -12,18 +12,23 @@ public class MoneyManager {
     public static int count50 = 300;
     public static int count10 = 300;
 
-    public void MoneyManager() {
+    /**
+     * @param oldInput 
+     * @param newInput 
+     * @return
+     */
+    public static int calculateTotalInput(int oldInput, int newInput) {
         // TODO implement here
-    }
-
-    public int calculateTotalInput(int oldInput, int newInput) {
-        // TODO implement here
-        return 0;
+    	
+    	oldInput+=newInput;
+    	
+        return oldInput;
     }
 
     public static int calculateChange(int input, int price) {
         // TODO implement here
-        return 0;
+    	input-=price;
+        return input;
     }
     
     public void addMoneyCount(String moneyType) {
