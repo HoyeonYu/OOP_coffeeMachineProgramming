@@ -566,6 +566,8 @@ public class UserPanel {
 		  changeOut.setVisible(true);
 		  darkGrayJPanel.add(changeOut);  	  
 		  darkGrayJPanel.repaint();
+		  
+		  //commit 22:42
 	}
 	
 	
