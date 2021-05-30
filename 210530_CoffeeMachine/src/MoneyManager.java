@@ -27,7 +27,8 @@ public class MoneyManager {
 
     public static int calculateChange(int input, int price) {
         // TODO implement here
-        return 0;
+    	input-=price;
+        return input;
     }
     
     public void addMoneyCount(String moneyType) {

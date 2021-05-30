@@ -102,19 +102,29 @@ public class UserPanel {
 		btnPBlackCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnPBlackCoffee.getText() == "O" && readyLight1.getText().equals("o")
-						&& AlertLED.getText().equals("판매중")) {
-					Controller.requestProduct("PBlackCoffee");
-				}
+				if (btnPBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+					if(currentInput>=400) {
+						Controller.requestProduct("PBlackCoffee");
+						currentInput=MoneyManager.calculateChange(currentInput, 400);
+						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+						readyLight1.setText("●");
+						btnPBlackCoffee.setText("●");
+					}
+				}				
 			}
 		});
 
 		btnPSugarCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnPSugarCoffee.getText() == "O" && readyLight1.getText().equals("o")
-						&& AlertLED.getText().equals("판매중")) {
-					Controller.requestProduct("PSugarCoffee");
+				if (btnPSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+					if(currentInput>=400) {
+						Controller.requestProduct("PSugarCoffee");
+						currentInput=MoneyManager.calculateChange(currentInput, 400);
+						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+						readyLight1.setText("●");
+						btnPSugarCoffee.setText("●");
+					}
 				}
 			}
 		});
@@ -122,9 +132,14 @@ public class UserPanel {
 		btnPSugarCreamCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnPSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("o")
-						&& AlertLED.getText().equals("판매중")) {
-					Controller.requestProduct("PSugarCreamCoffee");
+				if (btnPSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+					if(currentInput>=400) {
+						Controller.requestProduct("PSugarCreamCoffee");
+						currentInput=MoneyManager.calculateChange(currentInput, 400);
+						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+						readyLight1.setText("●");
+						btnPSugarCreamCoffee.setText("●");
+					}
 				}
 			}
 		});
@@ -196,9 +211,14 @@ public class UserPanel {
 		btnNBlackCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnNBlackCoffee.getText() == "O" && readyLight1.getText().equals("o")
-						&& AlertLED.getText().equals("판매중")) {
-					Controller.requestProduct("NBlackCoffee");
+				if (btnNBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+					if(currentInput>=300) {
+						Controller.requestProduct("NBlackCoffee");
+						currentInput=MoneyManager.calculateChange(currentInput, 300);
+						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+						readyLight1.setText("●");
+						btnNBlackCoffee.setText("●");
+					}
 				}
 			}
 		});
@@ -206,9 +226,14 @@ public class UserPanel {
 		btnNSugarCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnNSugarCoffee.getText() == "O" && readyLight1.getText().equals("o")
-						&& AlertLED.getText().equals("판매중")) {
-					Controller.requestProduct("NSugarCoffee");
+				if (btnNSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+					if(currentInput>=300) {
+						Controller.requestProduct("NSugarCoffee");
+						currentInput=MoneyManager.calculateChange(currentInput, 300);
+						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+						readyLight1.setText("●");
+						btnNSugarCoffee.setText("●");
+					}
 				}
 			}
 		});
@@ -216,9 +241,14 @@ public class UserPanel {
 		btnNSugarCreamCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnNSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("o")
-						&& AlertLED.getText().equals("판매중")) {
-					Controller.requestProduct("NSugarCreamCoffee");
+				if (btnNSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+					if(currentInput>=300) {
+						Controller.requestProduct("NSugarCreamCoffee");
+						currentInput=MoneyManager.calculateChange(currentInput, 300);
+						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+						readyLight1.setText("●");
+						btnNSugarCreamCoffee.setText("●");
+					}
 				}
 			}
 		});
@@ -287,31 +317,46 @@ public class UserPanel {
 		  
 		  btnYulmu.addActionListener(new ActionListener() {
 			  @Override 
-			  public void actionPerformed(ActionEvent e) { 
-				  if (btnYulmu.getText() == "O" && readyLight1.getText().equals("o") &&
-						  AlertLED.getText().equals("판매중")) { 
-					  Controller.requestProduct("Yulmu"); 
-				  } 
+			  public void actionPerformed(ActionEvent e) {
+				  if (btnYulmu.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput>=300) {
+							Controller.requestProduct("Yulmu");
+							currentInput=MoneyManager.calculateChange(currentInput, 300);
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnYulmu.setText("●");
+						}
+					}
 			  }
 		  });
 		  
 		  btnBlackTea.addActionListener(new ActionListener() {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) { 
-				  if (btnBlackTea.getText() == "O" && readyLight1.getText().equals("o") &&
-						  AlertLED.getText().equals("판매중")) { 
-					  Controller.requestProduct("BlackTea"); 
-				  }
+				  if (btnBlackTea.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput>=300) {
+							Controller.requestProduct("BlackTea");
+							currentInput=MoneyManager.calculateChange(currentInput, 300);
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnBlackTea.setText("●");
+						}
+					}
 			  } 
 		  });
 		  
 		  btnCocoa.addActionListener(new ActionListener() {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) { 
-				  if (btnCocoa.getText() == "O" && readyLight1.getText().equals("o") &&
-						  AlertLED.getText().equals("판매중")) { 
-					  Controller.requestProduct("Cocoa"); 
-				  } 
+				  if (btnCocoa.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput>=300) {
+							Controller.requestProduct("Cocoa");
+							currentInput=MoneyManager.calculateChange(currentInput, 300);
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnCocoa.setText("●");
+						}
+					}
 			  }
 		  });
 		 
@@ -356,9 +401,7 @@ public class UserPanel {
 		  moneyLED.setLocation(320, 70);
 		  moneyLED.setSize(170, 45);
 		  moneyLED.setVisible(true);
-		  
-		  /****************** MoneyManager에서 calculateTotalInput 가져오기 나중에 수정 */
-		  moneyLED.setText("600\n판매중");
+		  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 
 		  /***********  Show Water Temperature *************/
 		  JLabel tempLabel = new JLabel("물 온도");
@@ -616,6 +659,7 @@ public class UserPanel {
 		  });
 		  
 		  /**********************My Wallet**************************/
+		  
 		  JPanel walletPanel = new JPanel();		
 		  panelWrapper.add(walletPanel);
 		  //walletPanel.setBackground(new Color(255,0,0));
@@ -636,7 +680,9 @@ public class UserPanel {
 		  btn1000.addActionListener(new ActionListener() {
 					  @Override
 					  public void actionPerformed(ActionEvent e) {
-						  //MoneyManager.calculateTotalInput(oldInput, 1000);
+						  //currentInput+=1000;
+						  currentInput=MoneyManager.calculateTotalInput(currentInput, 1000);
+						  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 					  }
 				  });
 		  
@@ -649,7 +695,8 @@ public class UserPanel {
 		  btn500.addActionListener(new ActionListener() {
 			  @Override
 			  public void actionPerformed(ActionEvent e) {
-				  MoneyManager.count500++;
+				  currentInput=MoneyManager.calculateTotalInput(currentInput, 500);
+				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 			  }
 		  });
 		  
@@ -662,7 +709,8 @@ public class UserPanel {
 		  btn100.addActionListener(new ActionListener() {
 			  @Override
 			  public void actionPerformed(ActionEvent e) {
-				  MoneyManager.count100++;
+				  currentInput=MoneyManager.calculateTotalInput(currentInput, 100);
+				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 			  }
 		  });
 		  
@@ -675,7 +723,8 @@ public class UserPanel {
 		  btn50.addActionListener(new ActionListener() {
 			  @Override
 			  public void actionPerformed(ActionEvent e) {
-				  MoneyManager.count50++;
+				  currentInput=MoneyManager.calculateTotalInput(currentInput, 50);
+				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 			  }
 		  });
 		  
@@ -688,7 +737,8 @@ public class UserPanel {
 		  btn10.addActionListener(new ActionListener() {
 			  @Override
 			  public void actionPerformed(ActionEvent e) {
-				  MoneyManager.count10++;
+				  currentInput=MoneyManager.calculateTotalInput(currentInput, 10);
+				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 			  }
 		  });
 
@@ -703,7 +753,15 @@ public class UserPanel {
 		  btnChange.setLocation(380, 250);
 		  btnChange.setSize(50,50);
 		  btnChange.setVisible(true);
-		  darkGrayJPanel.add(btnChange);		  	  
+		  darkGrayJPanel.add(btnChange);	
+		  btnChange.addActionListener(new ActionListener() {
+			  @Override
+			  public void actionPerformed(ActionEvent e) {
+				  changeOut.setText(Integer.toString(currentInput));
+				  currentInput=0;
+				  moneyLED.setText(currentInput+"\n판매중");
+			  }
+		  });
 		  darkGrayJPanel.repaint();
 		  
 		  /**********************showChange button************************/
@@ -714,21 +772,21 @@ public class UserPanel {
 		  changeOut.setLocation(360, 320);
 		  changeOut.setSize(90,50);
 		  changeOut.setVisible(true);
-		  darkGrayJPanel.add(changeOut);  	  
+		  darkGrayJPanel.add(changeOut);
 		  darkGrayJPanel.repaint();
 		  
-		  //commit 22:42
 	}
 	
+	public static int currentInput=0;
 	
 	public JTextPane moneyLED = new JTextPane();
 	public static JTextPane AlertLED = new JTextPane();
 	public JButton btnChange = new JButton();
 	public JButton changeOut = new JButton();
 	public JTextField waterTempLED = new JTextField(Integer.toString(TemperatureSensor.getWaterTemperature()));
-	public static JLabel readyLight1 = new JLabel("●");
-	public static JLabel readyLight2 = new JLabel("●");
-	public static JLabel readyLight3 = new JLabel("●");
+	public static JLabel readyLight1 = new JLabel("O");
+	public static JLabel readyLight2 = new JLabel("O");
+	public static JLabel readyLight3 = new JLabel("O");
 	
 	public JPanel panelProductExit = new JPanel();
 	public static JButton Product = new JButton();

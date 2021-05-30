@@ -108,7 +108,6 @@ public class Controller {
 			public void run() {
 				try {
 					System.out.println("1스텝");
-					UserPanel.readyLight1.setText("O");
 					Thread.sleep(3000);
 					System.out.println(selection + "제품이 선택되었습니다");
 					
@@ -120,12 +119,12 @@ public class Controller {
 					ingredient = DataManager.getIngredient(selection);
 					IngredientManager.requestIngredient(ingredient);
 					System.out.println("2스텝");
-					UserPanel.readyLight2.setText("O");
+					UserPanel.readyLight2.setText("●");
 					System.out.println("-------- 물과 재료 준비 완료");
 					
 					Thread.sleep(3000);
 					Manufacture.mix(water, ingredient);
-					UserPanel.readyLight3.setText("O");
+					UserPanel.readyLight3.setText("●");
 					System.out.println("3스텝");
 					System.out.println("-------- 제조 완성");
 				}
