@@ -614,6 +614,78 @@ public class UserPanel {
 				  });
 			  }
 		  });
+		  
+		  /**********************My Wallet**************************/
+		  JPanel walletPanel = new JPanel();		
+		  panelWrapper.add(walletPanel);
+		  //walletPanel.setBackground(new Color(255,0,0));
+		  walletPanel.setBounds(500, 0, 200, 500);
+		  walletPanel.setLayout(null);
+
+		  JLabel labelMyWallet = new JLabel("³» Áö°©");
+		  labelMyWallet.setHorizontalAlignment(SwingConstants.CENTER);
+		  labelMyWallet.setBounds(65, 50, 57, 14);
+		  walletPanel.add(labelMyWallet);
+		  
+		  ImageIcon ic_1000won = new ImageIcon(new ImageIcon("won_1000.jpeg").getImage().getScaledInstance(80, 30, Image.SCALE_DEFAULT));
+		  btn1000.setIcon(ic_1000won);
+		  btn1000.setLocation(55, 80);
+		  btn1000.setSize(80,30);
+		  btn1000.setVisible(true);
+		  walletPanel.add(btn1000);	
+		  
+		  ImageIcon ic_500won = new ImageIcon(new ImageIcon("won_500.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		  btn500.setIcon(ic_500won);
+		  btn500.setLocation(70, 120);
+		  btn500.setSize(50,50);
+		  btn500.setVisible(true);
+		  walletPanel.add(btn500);
+		  
+		  ImageIcon ic_100won = new ImageIcon(new ImageIcon("won_100.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		  btn100.setIcon(ic_100won);
+		  btn100.setLocation(70, 180);
+		  btn100.setSize(50,50);
+		  btn100.setVisible(true);
+		  walletPanel.add(btn100);
+		  
+		  ImageIcon ic_50won = new ImageIcon(new ImageIcon("won_50.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		  btn50.setIcon(ic_50won);
+		  btn50.setLocation(70, 240);
+		  btn50.setSize(50,50);
+		  btn50.setVisible(true);
+		  walletPanel.add(btn50);
+		  
+		  ImageIcon ic_10won = new ImageIcon(new ImageIcon("won_10.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		  btn10.setIcon(ic_10won);
+		  btn10.setLocation(70, 300);
+		  btn10.setSize(50,50);
+		  btn10.setVisible(true);
+		  walletPanel.add(btn10);
+
+		  	  
+		  walletPanel.repaint();
+
+		  /**********************refresh button***************************/
+		  
+		  ImageIcon ic_refresh = new ImageIcon(new ImageIcon("refresh.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		  btnChange.setIcon(ic_refresh);
+		  btnChange.setBackground(Color.LIGHT_GRAY);
+		  btnChange.setLocation(380, 250);
+		  btnChange.setSize(50,50);
+		  btnChange.setVisible(true);
+		  darkGrayJPanel.add(btnChange);		  	  
+		  darkGrayJPanel.repaint();
+		  
+		  /**********************showChange button************************/
+		  
+		  changeOut.setText(Integer.toString(MoneyManager.calculateChange(0, 0)));
+		  changeOut.setForeground(Color.WHITE);
+		  changeOut.setBackground(Color.BLACK);
+		  changeOut.setLocation(360, 320);
+		  changeOut.setSize(90,50);
+		  changeOut.setVisible(true);
+		  darkGrayJPanel.add(changeOut);  	  
+		  darkGrayJPanel.repaint();
 	}
 	
 	
