@@ -270,8 +270,9 @@ public class UserPanel {
 		  labelPriceBlackTeaJLabel.setBounds(97, 41, 95, 15);
 		  panelWoori.add(labelPriceBlackTeaJLabel);
 		  
-		  btnCocoa.setBackground(Color.DARK_GRAY); btnCocoa.setForeground(new
-		  Color(255, 51, 51)); btnCocoa.setBounds(191, 57, 95, 15);
+		  btnCocoa.setBackground(Color.DARK_GRAY); 
+		  btnCocoa.setForeground(new Color(255, 51, 51)); 
+		  btnCocoa.setBounds(191, 57, 95, 15);
 		  panelWoori.add(btnCocoa);
 		  
 		  Label labelCocoaLabel = new Label("코코아"); 
@@ -286,24 +287,33 @@ public class UserPanel {
 		  panelWoori.add(labelPriceCocoaJLabel);
 		  
 		  btnYulmu.addActionListener(new ActionListener() {
-		  
-		  @Override public void actionPerformed(ActionEvent e) { if (btnYulmu.getText()
-		  == "O" && readyLight1.getText().equals("o") &&
-		  AlertLED.getText().equals("판매중")) { Controller.requestProduct("Yulmu"); } }
+			  @Override 
+			  public void actionPerformed(ActionEvent e) { 
+				  if (btnYulmu.getText() == "O" && readyLight1.getText().equals("o") &&
+						  AlertLED.getText().equals("판매중")) { 
+					  Controller.requestProduct("Yulmu"); 
+				  } 
+			  }
 		  });
 		  
 		  btnBlackTea.addActionListener(new ActionListener() {
-		  
-		  @Override public void actionPerformed(ActionEvent e) { if
-		  (btnBlackTea.getText() == "O" && readyLight1.getText().equals("o") &&
-		  AlertLED.getText().equals("판매중")) { Controller.requestProduct("BlackTea"); }
-		  } });
+			  @Override 
+			  public void actionPerformed(ActionEvent e) { 
+				  if (btnBlackTea.getText() == "O" && readyLight1.getText().equals("o") &&
+						  AlertLED.getText().equals("판매중")) { 
+					  Controller.requestProduct("BlackTea"); 
+				  }
+			  } 
+		  });
 		  
 		  btnCocoa.addActionListener(new ActionListener() {
-		  
-		  @Override public void actionPerformed(ActionEvent e) { if (btnCocoa.getText()
-		  == "O" && readyLight1.getText().equals("o") &&
-		  AlertLED.getText().equals("판매중")) { Controller.requestProduct("Cocoa"); } }
+			  @Override 
+			  public void actionPerformed(ActionEvent e) { 
+				  if (btnCocoa.getText() == "O" && readyLight1.getText().equals("o") &&
+						  AlertLED.getText().equals("판매중")) { 
+					  Controller.requestProduct("Cocoa"); 
+				  } 
+			  }
 		  });
 		 
 		  panelWoori.repaint();
@@ -334,388 +344,194 @@ public class UserPanel {
 		  ImageIcon imageIcon = new ImageIcon(new ImageIcon("emptyCoffee.jpg").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
 		  JLabel label = new JLabel();
 		  label.setIcon(imageIcon);
-		  label.setLocation(40, 280); // 프레임 실행시 위치 지정
-		  label.setSize(200, 200); // 프레임 사이즈 지정
+		  label.setLocation(40, 280);
+		  label.setSize(200, 200);
 		  label.setVisible(true);
 		  whiteJPanel.add(label);		  
 		  whiteJPanel.repaint();	
 		  
 		  
-		  /***********  Show Input Price  *************/
-		  	
+		  /***********  Show Input Price Money LED *************/
 		  darkGrayJPanel.add(moneyLED);
 		  moneyLED.setBackground(new Color(255, 255, 255));
-		  moneyLED.setLocation(320, 70); // 프레임 실행시 위치 지정
-		  moneyLED.setSize(170, 45); // 프레임 사이즈 지정
+		  moneyLED.setLocation(320, 70);
+		  moneyLED.setSize(170, 45);
 		  moneyLED.setVisible(true);
 		  
 		  /****************** MoneyManager에서 calculateTotalInput 가져오기 나중에 수정 */
 		  moneyLED.setText("600\n판매중");
-		  
+
+		  /***********  Show Water Temperature *************/
 		  JLabel tempLabel = new JLabel("물 온도");
 		  tempLabel.setForeground(new Color(255, 255, 255));
-		  tempLabel.setLocation(320, 150); // 프레임 실행시 위치 지정
-		  tempLabel.setSize(170, 45); // 프레임 사이즈 지정
+		  tempLabel.setLocation(320, 150);
+		  tempLabel.setSize(170, 45);
 		  tempLabel.setVisible(true);
 
 		  darkGrayJPanel.add(tempLabel);
 		  darkGrayJPanel.add(waterTempLED); 
 
 		  waterTempLED.setBackground(new Color(255, 255, 255));
-		  waterTempLED.setLocation(370, 160); // 프레임 실행시 위치 지정
-		  waterTempLED.setSize(100, 20); // 프레임 사이즈 지정
+		  waterTempLED.setLocation(370, 160);
+		  waterTempLED.setSize(100, 20);
 		  waterTempLED.setVisible(true);
 		  darkGrayJPanel.repaint();	
+		  
+		  /*************** Admin Button ***************/
+		  btnApplyAdmin.setBackground(Color.DARK_GRAY); 
+		  btnApplyAdmin.setForeground(new Color(255, 255, 255)); 
+		  btnApplyAdmin.setBounds(420, 430, 60, 20);
+		  darkGrayJPanel.add(btnApplyAdmin);
+		  
+		  btnApplyAdmin.addActionListener(new ActionListener() {
+			  @Override 
+			  public void actionPerformed(ActionEvent e) { 
+				  darkGrayJPanel.setVisible(false);
+				  
+				  JPanel darkGrayPWJPanel = new JPanel();		
+				  darkGrayPWJPanel.setBackground(new Color(80, 80, 80));
+				  panelWrapper.add(darkGrayPWJPanel);
+				  darkGrayPWJPanel.setBounds(0, 0, 500, 500);
+				  darkGrayPWJPanel.setLayout(null);
+					
+				  JPanel whitePWJPanel = new JPanel();		
+				  whitePWJPanel.setBackground(new Color(255, 255, 255));
+				  darkGrayPWJPanel.add(whitePWJPanel);
+				  whitePWJPanel.setBounds(10, 10, 300, 440);
+				  whitePWJPanel.setLayout(null);
+					  
+				  JButton openBtn = new JButton("열기");		  
+				  openBtn.setBackground(Color.DARK_GRAY); 
+				  openBtn.setForeground(new Color(255, 255, 255)); 
+				  openBtn.setBounds(340, 430, 60, 20);
+				  darkGrayPWJPanel.add(openBtn);
+				  
+				  openBtn.addActionListener(new ActionListener() {
+					  @Override 
+					  public void actionPerformed(ActionEvent e) {
+						  
+					  }
+				  });
+				  
+				  JButton closeBtn = new JButton("닫기");
+				  closeBtn.setBackground(Color.DARK_GRAY); 
+				  closeBtn.setForeground(new Color(255, 255, 255)); 
+				  closeBtn.setBounds(420, 430, 60, 20);
+				  darkGrayPWJPanel.add(closeBtn);
+				  
+				  closeBtn.addActionListener(new ActionListener() {
+					  @Override 
+					  public void actionPerformed(ActionEvent e) {
+						  darkGrayPWJPanel.setVisible(false);
+						  darkGrayJPanel.setVisible(true);
+					  }
+				  });
+			  }
+		  });
+		  
+		  
 	}
-
-	/**
-	 * 
-	 */
-	// public JPanel panelWrapper;
-	/**
-	 * 
-	 */
-	
 	
 	
 	public JTextPane moneyLED = new JTextPane();
-
-	/**
-	 * 
-	 */
 	public static JTextPane AlertLED = new JTextPane();
-
-	/**
-	 * 
-	 */
 	public JButton btnChange = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton changeOut = new JButton();
-
-	/**
-	 * 
-	 */
 	public JTextField waterTempLED = new JTextField(Integer.toString(TemperatureSensor.getWaterTemperature()));
-
-	/**
-	 * 
-	 */
 	public static JLabel readyLight1 = new JLabel("●");
-
-	/**
-	 * 
-	 */
 	public static JLabel readyLight2 = new JLabel("●");
-
-	/**
-	 * 
-	 */
 	public static JLabel readyLight3 = new JLabel("●");
-
-	/**
-	 * 
-	 */
+	
 	public JPanel panelProductExit = new JPanel();
-
-	/**
-	 * 
-	 */
 	public static JButton Product = new JButton();
-
-	/**
-	 * 
-	 */
+	
 	public static ImageIcon cup = new ImageIcon("emptyCoffee.jpg");
-
-	/**
-	 * 
-	 */
 	public static ImageIcon coffee = new ImageIcon("filledCoffee.png");
-
-	/**
-	 * 
-	 */
+	
 	public JButton btn1000 = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton btn500 = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton btn100 = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton btn50 = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton btn10 = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton btnInvalidMoney = new JButton();
-
-	/**
-	 * 
-	 */
+	
 	public JButton lock_in = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton lock_out = new JButton();
-
-	/**
-	 * 
-	 */
 	public JButton lock_out2 = new JButton();
-
-	/**
-	 * 
-	 */
+	
 	public JTextField countPCoffee = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField countNCoffee = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField countCream = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField countSugar = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField countYulmu = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField countBlackTea = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField countCocoa = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField countTotal = new JTextField();
-
-	/**
-	 * 
-	 */
+	
 	public JButton count1000 = new JButton();
-
-	/**
-	 * 
-	 */
 	public JTextField count500 = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField count100 = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField count50 = new JTextField();
-
-	/**
-	 * 
-	 */
 	public JTextField count10 = new JTextField();
-
-	/**
-	 * 
-	 */
+	
 	public static JSpinner cupCount = new JSpinner();
-
-	/**
-	 * 
-	 */
+	
 	public JTextField pricePBlackCoffee = new JTextField("400");
-
-	/**
-	 * 
-	 */
 	public JTextField priceNBlackCoffee = new JTextField("300");
-
-	/**
-	 * 
-	 */
 	public JTextField priceYulmu = new JTextField("300");
-
-	/**
-	 * 
-	 */
 	public JTextField priceBlackTea = new JTextField("300");
-
-	/**
-	 * 
-	 */
 	public JTextField priceCocoa = new JTextField("300");
-
-	/**
-	 * 
-	 */
 	public JTextField pricePSugarCoffee = new JTextField("400");
-
-	/**
-	 * 
-	 */
 	public JTextField pricePSugarCreamCoffee = new JTextField("400");
-
-	/**
-	 * 
-	 */
 	public JTextField priceNSugarCoffee = new JTextField("300");
-
-	/**
-	 * 
-	 */
 	public JTextField priceNSugarCreamCoffee = new JTextField("300");
-
-	/**
-	 * 
-	 */
+	
 	public JTextField waterTempSet = new JTextField("96");
-
-	/**
-	 * 
-	 */
-	public JButton btnApplyAdmin = new JButton();
-	/**
-	 * 
-	 */
+	
+	public JButton btnApplyAdmin = new JButton("열쇠");
+	
 	private JButton btnPBlackCoffee = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnPSugarCoffee = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnPSugarCreamCoffee = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnNBlackCoffee = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnNSugarCoffee = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnNSugarCreamCoffee = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnYulmu = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnBlackTea = new JButton("O");
-
-	/**
-	 * 
-	 */
 	private JButton btnCocoa = new JButton("O");
-
-	/**
-	 * 
-	 */
+	
 	private String password = "";
-
-	/**
-	 * 
-	 */
 	private JTextField textareaPassword = new JTextField();
-
-	/**
-	 * 
-	 */
 	private String passwordEntered = "";
 
-	/**
-	 * 
-	 */
 	public void UserPanel() {
 		// TODO implement here
 	}
 
-	/**
-	 * @param e
-	 */
 	public void acceptMoney(ActionEvent e) {
 		// TODO implement here
 	}
 
-	/**
-	 * @param value
-	 */
 	public void showMoneyChangeExit(int value) {
 		// TODO implement here
 	}
 
-	/**
-	 * @param value
-	 */
 	public static void showMoneyLED(int value) {
 		// TODO implement here
 	}
 
-	/**
-	 * @param selectAvailable
-	 */
 	public void showAvailableBtnLED(String selectAvailable) {
 		// TODO implement here
 	}
 
-	/**
-	 * 
-	 */
 	public void showSoldOutBtnLED() {
 		// TODO implement here
 	}
 
-	/**
-	 * 
-	 */
 	private void closeLock() {
 		// TODO implement here
 	}
-
-	/**
-	 * 
-	 */
+	
 	private void openLock() {
 		// TODO implement here
 	}
