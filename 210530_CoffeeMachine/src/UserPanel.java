@@ -428,7 +428,6 @@ public class UserPanel {
 				  }
 
 				  darkGrayPWJPanel.add(passwordPanel);
-				  
 					  
 				  JButton openBtn = new JButton("열기");		  
 				  openBtn.setBackground(Color.DARK_GRAY); 
@@ -440,7 +439,158 @@ public class UserPanel {
 					  @Override
 					  public void actionPerformed(ActionEvent e) {
 						  if (passwordLEDJTextPane.getText().equals(password)) {
+							  darkGrayPWJPanel.setVisible(false);
 							  
+							  JPanel darkGrayControlJPanel = new JPanel();		
+							  darkGrayControlJPanel.setBackground(new Color(80, 80, 80));
+							  panelWrapper.add(darkGrayControlJPanel);
+							  darkGrayControlJPanel.setBounds(0, 0, 500, 500);
+							  darkGrayControlJPanel.setLayout(null);
+							  
+							  JPanel whiteControlJPanel = new JPanel();		
+							  whiteControlJPanel.setBackground(new Color(255, 255, 255));
+							  darkGrayControlJPanel.add(whiteControlJPanel);
+							  whiteControlJPanel.setBounds(10, 10, 300, 440);
+							  whiteControlJPanel.setLayout(null);
+							  
+							  /************ Have to Add Grid Layout 12 X 3 ************/
+							  
+							  JLabel waterMaxTempJLabel = new JLabel("물 최대 온도(℃)");
+							  waterMaxTempJLabel.setForeground(new Color(255, 255, 255));
+							  waterMaxTempJLabel.setLocation(320, 30);
+							  waterMaxTempJLabel.setSize(170, 25);
+							  waterMaxTempJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(waterMaxTempJLabel); 
+
+							  JTextField waterMaxTempJTextField = new JTextField();
+							  waterMaxTempJTextField.setForeground(new Color(0, 0, 0));
+							  waterMaxTempJTextField.setLocation(320, 50);
+							  waterMaxTempJTextField.setSize(170, 25);
+							  waterMaxTempJTextField.setVisible(true);
+							  darkGrayControlJPanel.add(waterMaxTempJTextField); 
+
+							  JLabel waterCupCountJLabel = new JLabel("컵 개수");
+							  waterCupCountJLabel.setForeground(new Color(255, 255, 255));
+							  waterCupCountJLabel.setLocation(320, 90);
+							  waterCupCountJLabel.setSize(170, 25);
+							  waterCupCountJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(waterCupCountJLabel); 
+							  
+							  cupCount.setLocation(320, 110);
+							  cupCount.setSize(170, 25);
+							  cupCount.setVisible(true);
+							  cupCount.setValue(CupManager.CupCount);
+							  darkGrayControlJPanel.add(cupCount); 
+
+							  JLabel totalCountJLabel = new JLabel("TOTAL");
+							  totalCountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
+							  totalCountJLabel.setForeground(new Color(255, 255, 255));
+							  totalCountJLabel.setLocation(320, 170);
+							  totalCountJLabel.setSize(60, 25);
+							  totalCountJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(totalCountJLabel); 
+							  
+							  JTextField totalCountJTextField = new JTextField();
+							  totalCountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
+							  totalCountJTextField.setLocation(400, 170);
+							  totalCountJTextField.setSize(90, 25);
+							  totalCountJTextField.setVisible(true);
+							  darkGrayControlJPanel.add(totalCountJTextField); 
+
+							  JLabel p1000CountJLabel = new JLabel("1000원");
+							  p1000CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
+							  p1000CountJLabel.setForeground(new Color(255, 255, 255));
+							  p1000CountJLabel.setLocation(320, 200);
+							  p1000CountJLabel.setSize(60, 25);
+							  p1000CountJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(p1000CountJLabel); 
+
+							  JTextField p1000CountJTextField = new JTextField();
+							  p1000CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
+							  p1000CountJTextField.setLocation(400, 200);
+							  p1000CountJTextField.setSize(90, 25);
+							  p1000CountJTextField.setVisible(true);
+							  p1000CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("1000")));
+							  darkGrayControlJPanel.add(p1000CountJTextField); 
+
+
+							  JLabel p500CountJLabel = new JLabel("500원");
+							  p500CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
+							  p500CountJLabel.setForeground(new Color(255, 255, 255));
+							  p500CountJLabel.setLocation(320, 230);
+							  p500CountJLabel.setSize(60, 25);
+							  p500CountJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(p500CountJLabel); 
+
+							  JTextField p500CountJTextField = new JTextField();
+							  p500CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
+							  p500CountJTextField.setLocation(400, 230);
+							  p500CountJTextField.setSize(90, 25);
+							  p500CountJTextField.setVisible(true);
+							  p500CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("500")));
+							  darkGrayControlJPanel.add(p500CountJTextField); 
+
+
+							  JLabel p100CountJLabel = new JLabel("100원");
+							  p100CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
+							  p100CountJLabel.setForeground(new Color(255, 255, 255));
+							  p100CountJLabel.setLocation(320, 260);
+							  p100CountJLabel.setSize(60, 25);
+							  p100CountJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(p100CountJLabel); 
+
+							  JTextField p100CountJTextField = new JTextField();
+							  p100CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
+							  p100CountJTextField.setLocation(400, 260);
+							  p100CountJTextField.setSize(90, 25);
+							  p100CountJTextField.setVisible(true);
+							  p100CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("100")));
+							  darkGrayControlJPanel.add(p100CountJTextField); 
+
+
+							  JLabel p10CountJLabel = new JLabel("10원");
+							  p10CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
+							  p10CountJLabel.setForeground(new Color(255, 255, 255));
+							  p10CountJLabel.setLocation(320, 290);
+							  p10CountJLabel.setSize(60, 25);
+							  p10CountJLabel.setVisible(true);
+							  darkGrayControlJPanel.add(p10CountJLabel); 
+
+							  JTextField p10CountJTextField = new JTextField();
+							  p10CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
+							  p10CountJTextField.setLocation(400, 290);
+							  p10CountJTextField.setSize(90, 25);
+							  p10CountJTextField.setVisible(true);
+							  p10CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("10")));
+							  darkGrayControlJPanel.add(p10CountJTextField); 
+
+							  
+							  JButton controlAdminApplyBtn = new JButton("적용");		  
+							  controlAdminApplyBtn.setBackground(Color.DARK_GRAY); 
+							  controlAdminApplyBtn.setForeground(new Color(255, 255, 255)); 
+							  controlAdminApplyBtn.setBounds(340, 430, 60, 20);
+							  darkGrayControlJPanel.add(controlAdminApplyBtn);
+							  
+							  controlAdminApplyBtn.addActionListener(new ActionListener() {
+								  @Override
+								  public void actionPerformed(ActionEvent e) {
+									  
+								  }
+							  });
+							  
+							  JButton controlAdminCloseBtn = new JButton("잠금");
+							  controlAdminCloseBtn.setBackground(Color.DARK_GRAY); 
+							  controlAdminCloseBtn.setForeground(new Color(255, 255, 255)); 
+							  controlAdminCloseBtn.setBounds(420, 430, 60, 20);
+							  darkGrayControlJPanel.add(controlAdminCloseBtn);
+
+							  controlAdminCloseBtn.addActionListener(new ActionListener() {
+								  @Override
+								  public void actionPerformed(ActionEvent e) {
+									  darkGrayControlJPanel.setVisible(false);
+									  darkGrayJPanel.setVisible(true);
+								  }
+							  });
 						  }
 						  
 						  else {
@@ -458,7 +608,7 @@ public class UserPanel {
 				  closeBtn.addActionListener(new ActionListener() {
 					  @Override
 					  public void actionPerformed(ActionEvent e) {
-						  //darkGrayPWJPanel.setVisible(false);
+						  darkGrayPWJPanel.setVisible(false);
 						  darkGrayJPanel.setVisible(true);
 					  }
 				  });
@@ -614,8 +764,8 @@ public class UserPanel {
 	
 	public static JSpinner cupCount = new JSpinner();
 	
-	public JTextField pricePBlackCoffee = new JTextField("400");
-	public JTextField priceNBlackCoffee = new JTextField("300");
+	public JTextField pricePBlackCoffee = new JTextField("400", 10);
+	public JTextField priceNBlackCoffee = new JTextField("300", 10);
 	public JTextField priceYulmu = new JTextField("300");
 	public JTextField priceBlackTea = new JTextField("300");
 	public JTextField priceCocoa = new JTextField("300");
@@ -638,7 +788,7 @@ public class UserPanel {
 	private JButton btnBlackTea = new JButton("O");
 	private JButton btnCocoa = new JButton("O");
 	
-	private String password = "1234";
+	private String password = "1";
 	private JTextField textareaPassword = new JTextField();
 	private String passwordEntered = "";
 
