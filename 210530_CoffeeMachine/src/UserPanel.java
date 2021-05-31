@@ -100,43 +100,59 @@ public class UserPanel {
 		btnPBlackCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnPBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput >= Integer.parseInt(pricePBlackCoffee.getText())) {
-						Controller.requestProduct("PBlackCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePBlackCoffee.getText()));
-						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-						readyLight1.setText("●");
-						btnPBlackCoffee.setText("●");
-					}
+				if(IngredientManager.countPCoffee<=0) {
+					moneyLED.setText("고급블랙커피 재료부족");
 				}
+				else {
+					if (btnPBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput >= Integer.parseInt(pricePBlackCoffee.getText())) {
+							Controller.requestProduct("PBlackCoffee");
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePBlackCoffee.getText()));
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnPBlackCoffee.setText("●");
+						}
+					}
+				}	
 			}
 		});
 
 		btnPSugarCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnPSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput >= Integer.parseInt(pricePSugarCoffee.getText())) {
-						Controller.requestProduct("PSugarCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCoffee.getText()));
-						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-						readyLight1.setText("●");
-						btnPSugarCoffee.setText("●");
-					}
+				if(IngredientManager.countPCoffee<=0||IngredientManager.countSugar<=0) {
+					moneyLED.setText("고급설탕커피 재료부족");
 				}
+				else {
+					if (btnPSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput >= Integer.parseInt(pricePSugarCoffee.getText())) {
+							Controller.requestProduct("PSugarCoffee");
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCoffee.getText()));
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnPSugarCoffee.setText("●");
+						}
+					}
+				}	
 			}
 		});
 
 		btnPSugarCreamCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnPSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput >= Integer.parseInt(pricePSugarCreamCoffee.getText())) {
-						Controller.requestProduct("PSugarCreamCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCreamCoffee.getText()));
-						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-						readyLight1.setText("●");
-						btnPSugarCreamCoffee.setText("●");
+				if(IngredientManager.countPCoffee<=0||IngredientManager.countSugar<=0
+						||IngredientManager.countCream<=0) {
+					moneyLED.setText("고급설탕크림커피 재료부족");
+				}
+				else {
+					if (btnPSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput >= Integer.parseInt(pricePSugarCreamCoffee.getText())) {
+							Controller.requestProduct("PSugarCreamCoffee");
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCreamCoffee.getText()));
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnPSugarCreamCoffee.setText("●");
+						}
 					}
 				}
 			}
@@ -209,13 +225,18 @@ public class UserPanel {
 		btnNBlackCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnNBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput >= Integer.parseInt(priceNBlackCoffee.getText())) {
-						Controller.requestProduct("NBlackCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNBlackCoffee.getText()));
-						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-						readyLight1.setText("●");
-						btnNBlackCoffee.setText("●");
+				if(IngredientManager.countNCoffee<=0) {
+					moneyLED.setText("일반블랙커피 재료부족");
+				}
+				else {
+					if (btnNBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput >= Integer.parseInt(priceNBlackCoffee.getText())) {
+							Controller.requestProduct("NBlackCoffee");
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNBlackCoffee.getText()));
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnNBlackCoffee.setText("●");
+						}
 					}
 				}
 			}
@@ -224,14 +245,19 @@ public class UserPanel {
 		btnNSugarCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnNSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput >= Integer.parseInt(priceNSugarCoffee.getText())) {
-						Controller.requestProduct("NSugarCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCoffee.getText()));
-						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-						readyLight1.setText("●");
-						btnNSugarCoffee.setText("●");
-					}
+				if(IngredientManager.countNCoffee<=0||IngredientManager.countSugar<=0) {
+					moneyLED.setText("일반설탕커피 재료부족");
+				}
+				else {
+					if (btnNSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput >= Integer.parseInt(priceNSugarCoffee.getText())) {
+							Controller.requestProduct("NSugarCoffee");
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCoffee.getText()));
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnNSugarCoffee.setText("●");
+						}
+					}	
 				}
 			}
 		});
@@ -239,14 +265,20 @@ public class UserPanel {
 		btnNSugarCreamCoffee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (btnNSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput >= Integer.parseInt(priceNSugarCreamCoffee.getText())) {
-						Controller.requestProduct("NSugarCreamCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCreamCoffee.getText()));
-						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-						readyLight1.setText("●");
-						btnNSugarCreamCoffee.setText("●");
-					}
+				if(IngredientManager.countNCoffee<=0||IngredientManager.countSugar<=0
+						||IngredientManager.countCream<=0) {
+					moneyLED.setText("일반설탕크림커피 재료부족");
+				}
+				else {
+					if (btnNSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
+						if(currentInput >= Integer.parseInt(priceNSugarCreamCoffee.getText())) {
+							Controller.requestProduct("NSugarCreamCoffee");
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCreamCoffee.getText()));
+							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+							readyLight1.setText("●");
+							btnNSugarCreamCoffee.setText("●");
+						}
+					}	
 				}
 			}
 		});
@@ -315,14 +347,19 @@ public class UserPanel {
 		  btnYulmu.addActionListener(new ActionListener() {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) {
-				  if (btnYulmu.getText() == "O" && readyLight1.getText().equals("O")) {
-						if(currentInput >= Integer.parseInt(priceYulmu.getText())) {
-							Controller.requestProduct("Yulmu");
-							currentInput=MoneyManager.calculateChange(currentInput,  Integer.parseInt(priceYulmu.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnYulmu.setText("●");
-						}
+				  if(IngredientManager.countYulmu<=0) {
+						moneyLED.setText("율무차 재료부족");
+					}
+					else {
+						 if (btnYulmu.getText() == "O" && readyLight1.getText().equals("O")) {
+								if(currentInput >= Integer.parseInt(priceYulmu.getText())) {
+									Controller.requestProduct("Yulmu");
+									currentInput=MoneyManager.calculateChange(currentInput,  Integer.parseInt(priceYulmu.getText()));
+									moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+									readyLight1.setText("●");
+									btnYulmu.setText("●");
+								}
+							}
 					}
 			  }
 		  });
@@ -330,13 +367,18 @@ public class UserPanel {
 		  btnBlackTea.addActionListener(new ActionListener() {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) { 
-				  if (btnBlackTea.getText() == "O" && readyLight1.getText().equals("O")) {
-						if(currentInput >= Integer.parseInt(priceBlackTea.getText())) {
-							Controller.requestProduct("BlackTea");
-							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceBlackTea.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnBlackTea.setText("●");
+				  if(IngredientManager.countBlackTea<=0) {
+						moneyLED.setText("홍차 재료부족");
+					}
+					else {
+						if (btnBlackTea.getText() == "O" && readyLight1.getText().equals("O")) {
+							if(currentInput >= Integer.parseInt(priceBlackTea.getText())) {
+								Controller.requestProduct("BlackTea");
+								currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceBlackTea.getText()));
+								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								readyLight1.setText("●");
+								btnBlackTea.setText("●");
+							}
 						}
 					}
 			  } 
@@ -345,14 +387,19 @@ public class UserPanel {
 		  btnCocoa.addActionListener(new ActionListener() {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) { 
-				  if (btnCocoa.getText() == "O" && readyLight1.getText().equals("O")) {
-						if(currentInput >= Integer.parseInt(priceCocoa.getText())) {
-							Controller.requestProduct("Cocoa");
-							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceCocoa.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnCocoa.setText("●");
-						}
+				  if(IngredientManager.countCocoa<=0) {
+						moneyLED.setText("코코아 재료부족");
+					}
+					else {
+						 if (btnCocoa.getText() == "O" && readyLight1.getText().equals("O")) {
+								if(currentInput >= Integer.parseInt(priceCocoa.getText())) {
+									Controller.requestProduct("Cocoa");
+									currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceCocoa.getText()));
+									moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+									readyLight1.setText("●");
+									btnCocoa.setText("●");
+								}
+							}
 					}
 			  }
 		  });
