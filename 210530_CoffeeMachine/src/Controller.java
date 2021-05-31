@@ -11,6 +11,7 @@ public class Controller {
 	private static List<Object> ingredient;
 	private int totalInput;
 	private static int productPrice;
+	public static boolean isRequestFinished = false;
 
 	public Boolean checkValidMoney(Object source) {
 		// TODO implement here
@@ -45,6 +46,7 @@ public class Controller {
 		Thread stepLightThread = new Thread() {
 			public void run() {
 				try {
+					isRequestFinished=false;
 					System.out.println("1스텝");
 					Thread.sleep(3000);
 					System.out.println(selection + "제품이 선택되었습니다");
@@ -68,6 +70,16 @@ public class Controller {
 					UserPanel.coffeeCupLabel.setIcon(imageIcon_full);
 					System.out.println("3스텝");
 					System.out.println("-------- 제조 완성");
+					
+					Thread.sleep(3000);
+					UserPanel.readyLight1.setText("O");
+					UserPanel.readyLight2.setText("O");
+					UserPanel.readyLight3.setText("O");
+					ImageIcon imageIcon_empty = new ImageIcon(new ImageIcon("emptyCoffee.jpg").getImage()
+							.getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+					UserPanel.coffeeCupLabel.setIcon(imageIcon_empty);
+					isRequestFinished=true;
+					UserPanel.repaintCoffeeButton();
 				}
 				
 				catch (InterruptedException e) {

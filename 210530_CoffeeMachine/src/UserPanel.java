@@ -30,8 +30,7 @@ public class UserPanel {
 		panelWrapper.add(darkGrayJPanel);
 		darkGrayJPanel.setBounds(0, 0, 500, 500);
 		darkGrayJPanel.setLayout(null);
-
-		JPanel whiteJPanel = new JPanel();		
+	
 		whiteJPanel.setBackground(new Color(255, 255, 255));
 		darkGrayJPanel.add(whiteJPanel);
 		whiteJPanel.setBounds(10, 10, 300, 440);
@@ -110,7 +109,7 @@ public class UserPanel {
 						readyLight1.setText("¡Ü");
 						btnPBlackCoffee.setText("¡Ü");
 					}
-				}				
+				}
 			}
 		});
 
@@ -985,10 +984,11 @@ public class UserPanel {
 		  changeOut.setVisible(true);
 		  darkGrayJPanel.add(changeOut);
 		  darkGrayJPanel.repaint();
-		  
 	}
 	
 	public static int currentInput=0;
+	
+	public static JPanel whiteJPanel = new JPanel();
 	
 	public JTextPane moneyLED = new JTextPane();
 	public static JTextPane AlertLED = new JTextPane();
@@ -1048,23 +1048,19 @@ public class UserPanel {
 	
 	public JButton btnApplyAdmin = new JButton("¿­¼è");
 	
-	private JButton btnPBlackCoffee = new JButton("O");
-	private JButton btnPSugarCoffee = new JButton("O");
-	private JButton btnPSugarCreamCoffee = new JButton("O");
-	private JButton btnNBlackCoffee = new JButton("O");
-	private JButton btnNSugarCoffee = new JButton("O");
-	private JButton btnNSugarCreamCoffee = new JButton("O");
-	private JButton btnYulmu = new JButton("O");
-	private JButton btnBlackTea = new JButton("O");
-	private JButton btnCocoa = new JButton("O");
+	public static JButton btnPBlackCoffee = new JButton("O");
+	public static JButton btnPSugarCoffee = new JButton("O");
+	public static JButton btnPSugarCreamCoffee = new JButton("O");
+	public static JButton btnNBlackCoffee = new JButton("O");
+	public static JButton btnNSugarCoffee = new JButton("O");
+	public static JButton btnNSugarCreamCoffee = new JButton("O");
+	public static JButton btnYulmu = new JButton("O");
+	public static JButton btnBlackTea = new JButton("O");
+	public static JButton btnCocoa = new JButton("O");
 	
 	private String password = "1";
 	private JTextField textareaPassword = new JTextField();
 	private String passwordEntered = "";
-
-	public void UserPanel() {
-		// TODO implement here
-	}
 
 	public void acceptMoney(ActionEvent e) {
 		// TODO implement here
@@ -1092,6 +1088,21 @@ public class UserPanel {
 	
 	private void openLock() {
 		// TODO implement here
+	}
+	
+	public static void repaintCoffeeButton() {
+		if(Controller.isRequestFinished==true) {
+			btnPBlackCoffee.setText("O");
+			btnPSugarCoffee.setText("O");
+			btnPSugarCreamCoffee.setText("O");
+			btnNBlackCoffee.setText("O");
+			btnNSugarCoffee.setText("O");
+			btnNSugarCreamCoffee.setText("O");
+			btnYulmu.setText("O");
+			btnBlackTea.setText("O");
+			btnCocoa.setText("O");
+			whiteJPanel.repaint();
+		}
 	}
 
 }
