@@ -52,6 +52,7 @@ public class Controller {
 					System.out.println(selection + "제품이 선택되었습니다");
 					
 					CupManager.requestCup();
+					
 					System.out.println("-------- 컵 준비 완료");
 					
 					Thread.sleep(3000);

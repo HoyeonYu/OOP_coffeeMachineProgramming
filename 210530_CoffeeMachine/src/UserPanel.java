@@ -14,11 +14,8 @@ public class UserPanel {
 		UserPanel up = new UserPanel();
 	}
 
-	/**
-	 * Default constructor
-	 */
 	public UserPanel() {
-		JFrame panelWrapper = new JFrame("제목");
+		JFrame panelWrapper = new JFrame("Coffee Vending Machine");
 		panelWrapper.setLayout(null);
 		panelWrapper.setBackground(new Color(204, 204, 255));
 		panelWrapper.setVisible(true);
@@ -106,11 +103,19 @@ public class UserPanel {
 				else {
 					if (btnPBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
 						if(currentInput >= Integer.parseInt(pricePBlackCoffee.getText())) {
-							Controller.requestProduct("PBlackCoffee");
 							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePBlackCoffee.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnPBlackCoffee.setText("●");
+
+							if (MoneyManager.notEnoughChange()) {
+								moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								currentInput += Integer.parseInt(pricePBlackCoffee.getText());
+							}
+							
+							else {
+								Controller.requestProduct("PBlackCoffee");
+								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								readyLight1.setText("●");
+								btnPBlackCoffee.setText("●");
+							}
 						}
 					}
 				}	
@@ -126,11 +131,19 @@ public class UserPanel {
 				else {
 					if (btnPSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
 						if(currentInput >= Integer.parseInt(pricePSugarCoffee.getText())) {
-							Controller.requestProduct("PSugarCoffee");
 							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCoffee.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnPSugarCoffee.setText("●");
+	
+							if (MoneyManager.notEnoughChange()) {
+								moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								currentInput += Integer.parseInt(pricePSugarCoffee.getText());
+							}
+							
+							else {
+								Controller.requestProduct("PSugarCoffee");
+								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								readyLight1.setText("●");
+								btnPSugarCoffee.setText("●");
+							}
 						}
 					}
 				}	
@@ -147,11 +160,19 @@ public class UserPanel {
 				else {
 					if (btnPSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
 						if(currentInput >= Integer.parseInt(pricePSugarCreamCoffee.getText())) {
-							Controller.requestProduct("PSugarCreamCoffee");
 							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCreamCoffee.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnPSugarCreamCoffee.setText("●");
+	
+							if (MoneyManager.notEnoughChange()) {
+								moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								currentInput += Integer.parseInt(pricePSugarCreamCoffee.getText());
+							}
+							
+							else {
+								Controller.requestProduct("PSugarCreamCoffee");
+								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								readyLight1.setText("●");
+								btnPSugarCreamCoffee.setText("●");
+							}
 						}
 					}
 				}
@@ -231,11 +252,19 @@ public class UserPanel {
 				else {
 					if (btnNBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
 						if(currentInput >= Integer.parseInt(priceNBlackCoffee.getText())) {
-							Controller.requestProduct("NBlackCoffee");
 							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNBlackCoffee.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnNBlackCoffee.setText("●");
+	
+							if (MoneyManager.notEnoughChange()) {
+								moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								currentInput += Integer.parseInt(priceNBlackCoffee.getText());
+							}
+							
+							else {
+								Controller.requestProduct("NBlackCoffee");
+								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								readyLight1.setText("●");
+								btnNBlackCoffee.setText("●");
+							}
 						}
 					}
 				}
@@ -251,11 +280,19 @@ public class UserPanel {
 				else {
 					if (btnNSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
 						if(currentInput >= Integer.parseInt(priceNSugarCoffee.getText())) {
-							Controller.requestProduct("NSugarCoffee");
 							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCoffee.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnNSugarCoffee.setText("●");
+	
+							if (MoneyManager.notEnoughChange()) {
+								moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								currentInput += Integer.parseInt(priceNSugarCoffee.getText());
+							}
+							
+							else {
+								Controller.requestProduct("NSugarCoffee");
+								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								readyLight1.setText("●");
+								btnNSugarCoffee.setText("●");
+							}
 						}
 					}	
 				}
@@ -272,11 +309,19 @@ public class UserPanel {
 				else {
 					if (btnNSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
 						if(currentInput >= Integer.parseInt(priceNSugarCreamCoffee.getText())) {
-							Controller.requestProduct("NSugarCreamCoffee");
 							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCreamCoffee.getText()));
-							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-							readyLight1.setText("●");
-							btnNSugarCreamCoffee.setText("●");
+							
+							if (MoneyManager.notEnoughChange()) {
+								moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								currentInput += Integer.parseInt(priceNSugarCreamCoffee.getText());
+							}
+							
+							else {
+								Controller.requestProduct("NSugarCreamCoffee");
+								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								readyLight1.setText("●");
+								btnNSugarCreamCoffee.setText("●");
+							}
 						}
 					}	
 				}
@@ -349,18 +394,27 @@ public class UserPanel {
 			  public void actionPerformed(ActionEvent e) {
 				  if(IngredientManager.countYulmu<=0) {
 						moneyLED.setText("율무차 재료부족");
-					}
-					else {
-						 if (btnYulmu.getText() == "O" && readyLight1.getText().equals("O")) {
-								if(currentInput >= Integer.parseInt(priceYulmu.getText())) {
-									Controller.requestProduct("Yulmu");
-									currentInput=MoneyManager.calculateChange(currentInput,  Integer.parseInt(priceYulmu.getText()));
-									moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-									readyLight1.setText("●");
-									btnYulmu.setText("●");
-								}
-							}
-					}
+				  }
+				  
+				  else {
+					  if (btnYulmu.getText() == "O" && readyLight1.getText().equals("O")) {
+						  if(currentInput >= Integer.parseInt(priceYulmu.getText())) {
+							  currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceYulmu.getText()));
+								
+							  if (MoneyManager.notEnoughChange()) {
+								  moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								  currentInput += Integer.parseInt(priceYulmu.getText());
+							  }
+								
+							  else {
+								  Controller.requestProduct("Yulmu");
+								  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								  readyLight1.setText("●");
+								  btnYulmu.setText("●");
+							  }
+						  }
+					  }
+				  }
 			  }
 		  });
 		  
@@ -373,11 +427,19 @@ public class UserPanel {
 					else {
 						if (btnBlackTea.getText() == "O" && readyLight1.getText().equals("O")) {
 							if(currentInput >= Integer.parseInt(priceBlackTea.getText())) {
-								Controller.requestProduct("BlackTea");
-								currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceBlackTea.getText()));
-								moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-								readyLight1.setText("●");
-								btnBlackTea.setText("●");
+								  currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceBlackTea.getText()));
+									
+								  if (MoneyManager.notEnoughChange()) {
+									  moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+									  currentInput += Integer.parseInt(priceBlackTea.getText());
+								  }
+									
+								  else {
+									  Controller.requestProduct("BlackTea");
+									  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+									  readyLight1.setText("●");
+									  btnBlackTea.setText("●");
+								  }
 							}
 						}
 					}
@@ -389,18 +451,27 @@ public class UserPanel {
 			  public void actionPerformed(ActionEvent e) { 
 				  if(IngredientManager.countCocoa<=0) {
 						moneyLED.setText("코코아 재료부족");
-					}
-					else {
-						 if (btnCocoa.getText() == "O" && readyLight1.getText().equals("O")) {
-								if(currentInput >= Integer.parseInt(priceCocoa.getText())) {
-									Controller.requestProduct("Cocoa");
-									currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceCocoa.getText()));
-									moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
-									readyLight1.setText("●");
-									btnCocoa.setText("●");
-								}
-							}
-					}
+				  }
+				
+				  else {
+					  if (btnCocoa.getText() == "O" && readyLight1.getText().equals("O")) {
+						  if(currentInput >= Integer.parseInt(priceCocoa.getText())) {
+							  currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceCocoa.getText()));
+								
+							  if (MoneyManager.notEnoughChange()) {
+								  moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+								  currentInput += Integer.parseInt(priceCocoa.getText());
+							  }
+								
+							  else {
+								  Controller.requestProduct("Cocoa");
+								  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+								  readyLight1.setText("●");
+								  btnCocoa.setText("●");
+							  }
+						  }
+					  }
+				  }
 			  }
 		  });
 		 
@@ -736,12 +807,13 @@ public class UserPanel {
 							  totalCountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(totalCountJLabel); 
 							  
-							  JTextField totalCountJTextField = new JTextField(Integer.toString(MoneyManager.getCoinStackTotal()));
+							  JTextField totalCountJTextField = new JTextField();
 							  totalCountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
 							  totalCountJTextField.setLocation(400, 170);
 							  totalCountJTextField.setSize(90, 25);
 							  totalCountJTextField.setVisible(true);
 							  totalCountJTextField.setEnabled(false);
+							  totalCountJTextField.setText(Integer.toString(MoneyManager.getCoinStackTotal()));
 							  darkGrayControlJPanel.add(totalCountJTextField); 
 
 							  JLabel p1000CountJLabel = new JLabel("1000원");
@@ -771,6 +843,7 @@ public class UserPanel {
 							  count500.setLocation(400, 230);
 							  count500.setSize(90, 25);
 							  count500.setVisible(true);
+							  count500.setText(Integer.toString(MoneyManager.getMoneyCount("500")));
 							  darkGrayControlJPanel.add(count500); 
 
 							  JLabel p100CountJLabel = new JLabel("100원");
@@ -785,6 +858,7 @@ public class UserPanel {
 							  count100.setLocation(400, 260);
 							  count100.setSize(90, 25);
 							  count100.setVisible(true);
+							  count100.setText(Integer.toString(MoneyManager.getMoneyCount("100")));
 							  darkGrayControlJPanel.add(count100); 
 
 							  JLabel p50CountJLabel = new JLabel("50원");
@@ -799,6 +873,7 @@ public class UserPanel {
 							  count50.setLocation(400, 290);
 							  count50.setSize(90, 25);
 							  count50.setVisible(true);
+							  count50.setText(Integer.toString(MoneyManager.getMoneyCount("50")));
 							  darkGrayControlJPanel.add(count50); 
 
 							  JLabel p10CountJLabel = new JLabel("10원");
@@ -813,6 +888,7 @@ public class UserPanel {
 							  count10.setLocation(400, 320);
 							  count10.setSize(90, 25);
 							  count10.setVisible(true);
+							  count10.setText(Integer.toString(MoneyManager.getMoneyCount("10")));
 							  darkGrayControlJPanel.add(count10); 
 
 							  /************ Apply Button ************/
@@ -1021,18 +1097,33 @@ public class UserPanel {
 		  btnChange.addActionListener(new ActionListener() {
 			  @Override
 			  public void actionPerformed(ActionEvent e) {
-				  //잔돈부족
-				  if(MoneyManager.notEnoughChange()) {
-					  moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+				  changeOut.setText(Integer.toString(currentInput));
+
+				  if (currentInput / 1000 > 0 && currentInput / 1000 <= MoneyManager.count1000) {
+					  MoneyManager.count1000--;
 				  }
-				  //잔돈충분
-				  else {
-					  changeOut.setText(Integer.toString(currentInput));
-					  currentInput=0;
-					  moneyLED.setText(currentInput+"\n판매중");
+					
+				  else if (currentInput / 500 > 0 && currentInput / 500 <= MoneyManager.count500) {
+					  MoneyManager.count500--;
 				  }
+					
+				  else if (currentInput / 100 > 0 && currentInput / 100 <= MoneyManager.count100) {
+					  MoneyManager.count100--;
+				  }
+					
+				  else if (currentInput / 50 > 0 && currentInput / 50 <= MoneyManager.count50) {
+					  MoneyManager.count50--;
+				  }
+					
+				  else if (currentInput / 10 > 0 && currentInput / 10 <= MoneyManager.count10) {
+					  MoneyManager.count10--;
+				  }
+				  
+				  currentInput = 0;
+				  moneyLED.setText(currentInput + "\n판매중");
 			  }
 		  });
+		  
 		  darkGrayJPanel.repaint();
 		  
 		  /**********************showChange button************************/

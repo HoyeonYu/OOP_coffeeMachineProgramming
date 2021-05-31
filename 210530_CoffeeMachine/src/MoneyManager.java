@@ -76,12 +76,17 @@ public class MoneyManager {
     }
     
     public static boolean notEnoughChange() {
-    	if(UserPanel.currentInput>getCurrentBalanceTotal()) {
-    		return true;
-    	}
-    	else {
+    	System.out.println("Current Input: " + UserPanel.currentInput);
+    	
+    	if ((UserPanel.currentInput / 1000 > 0 && UserPanel.currentInput / 1000 <= count1000) ||
+    		(UserPanel.currentInput / 500 > 0 && UserPanel.currentInput / 500 <= count500) ||
+    		(UserPanel.currentInput / 100 > 0 && UserPanel.currentInput / 100 <= count100) ||
+    		(UserPanel.currentInput / 50 > 0 && UserPanel.currentInput / 50 <= count50) ||
+    		(UserPanel.currentInput / 10 > 0 && UserPanel.currentInput / 10 <= count10 )) {    		
     		return false;
     	}
+
+    	return true;
     }
 
 }
