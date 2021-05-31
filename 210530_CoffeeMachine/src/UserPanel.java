@@ -515,6 +515,7 @@ public class UserPanel {
 							  countPCoffee.setLocation(100, 40);
 							  countPCoffee.setSize(80, 20);
 							  countPCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  countPCoffee.setText(Integer.toString(IngredientManager.countPCoffee));
 							  whiteControlJPanel.add(countPCoffee); 
 							  
 							  pricePBlackCoffee.setLocation(200, 40);
@@ -551,6 +552,7 @@ public class UserPanel {
 							  countNCoffee.setLocation(100, 130);
 							  countNCoffee.setSize(80, 20);
 							  countNCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  countNCoffee.setText(Integer.toString(IngredientManager.countNCoffee));
 							  whiteControlJPanel.add(countNCoffee); 
 							  
 							  priceNBlackCoffee.setLocation(200, 130);
@@ -587,6 +589,7 @@ public class UserPanel {
 							  countCream.setLocation(100, 220);
 							  countCream.setSize(80, 20);
 							  countCream.setHorizontalAlignment(SwingConstants.CENTER);
+							  countCream.setText(Integer.toString(IngredientManager.countCream));
 							  whiteControlJPanel.add(countCream);  
 
 							  JLabel leftControlSugarJLabel = new JLabel("¼³ÅÁ");
@@ -597,6 +600,7 @@ public class UserPanel {
 							  countSugar.setLocation(100, 250);
 							  countSugar.setSize(80, 20);
 							  countSugar.setHorizontalAlignment(SwingConstants.CENTER);
+							  countSugar.setText(Integer.toString(IngredientManager.countSugar));
 							  whiteControlJPanel.add(countSugar);  
 
 							  JLabel leftControlYulmuJLabel = new JLabel("À²¹«Â÷");
@@ -607,6 +611,7 @@ public class UserPanel {
 							  countYulmu.setLocation(100, 280);
 							  countYulmu.setSize(80, 20);
 							  countYulmu.setHorizontalAlignment(SwingConstants.CENTER);
+							  countYulmu.setText(Integer.toString(IngredientManager.countYulmu));
 							  whiteControlJPanel.add(countYulmu);  
 							  
 							  priceYulmu.setLocation(200, 280);
@@ -622,6 +627,7 @@ public class UserPanel {
 							  countBlackTea.setLocation(100, 310);
 							  countBlackTea.setSize(80, 20);
 							  countBlackTea.setHorizontalAlignment(SwingConstants.CENTER);
+							  countBlackTea.setText(Integer.toString(IngredientManager.countBlackTea));
 							  whiteControlJPanel.add(countBlackTea);  
 							  
 							  priceBlackTea.setLocation(200, 310);
@@ -638,6 +644,7 @@ public class UserPanel {
 							  countCocoa.setLocation(100, 340);
 							  countCocoa.setSize(80, 20);
 							  countCocoa.setHorizontalAlignment(SwingConstants.CENTER);
+							  countCocoa.setText(Integer.toString(IngredientManager.countCocoa));
 							  whiteControlJPanel.add(countCocoa);  
 							  
 							  priceCocoa.setLocation(200, 340);
@@ -837,8 +844,6 @@ public class UserPanel {
 									  labelPriceYulmuJLabel.setText("$" + priceYulmu.getText());
 									  labelPriceBlackTeaJLabel.setText("$" + priceBlackTea.getText());
 									  labelPriceCocoaJLabel.setText("$" + priceCocoa.getText());
-
-									  System.out.println("pricePBlackCoffee: " + pricePBlackCoffee.getText());
 								  }
 							  });
 						  }
@@ -1029,8 +1034,8 @@ public class UserPanel {
 	
 	public static JSpinner cupCount = new JSpinner();
 	
-	public JTextField pricePBlackCoffee = new JTextField("400", 10);
-	public JTextField priceNBlackCoffee = new JTextField("300", 10);
+	public JTextField pricePBlackCoffee = new JTextField("400");
+	public JTextField priceNBlackCoffee = new JTextField("300");
 	public JTextField priceYulmu = new JTextField("300");
 	public JTextField priceBlackTea = new JTextField("300");
 	public JTextField priceCocoa = new JTextField("300");
