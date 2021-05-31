@@ -103,9 +103,9 @@ public class UserPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (btnPBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput>=400) {
+					if(currentInput >= Integer.parseInt(pricePBlackCoffee.getText())) {
 						Controller.requestProduct("PBlackCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, 400);
+						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePBlackCoffee.getText()));
 						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 						readyLight1.setText("●");
 						btnPBlackCoffee.setText("●");
@@ -118,9 +118,9 @@ public class UserPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (btnPSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput>=400) {
+					if(currentInput >= Integer.parseInt(pricePSugarCoffee.getText())) {
 						Controller.requestProduct("PSugarCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, 400);
+						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCoffee.getText()));
 						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 						readyLight1.setText("●");
 						btnPSugarCoffee.setText("●");
@@ -133,9 +133,9 @@ public class UserPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (btnPSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput>=400) {
+					if(currentInput >= Integer.parseInt(pricePSugarCreamCoffee.getText())) {
 						Controller.requestProduct("PSugarCreamCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, 400);
+						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(pricePSugarCreamCoffee.getText()));
 						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 						readyLight1.setText("●");
 						btnPSugarCreamCoffee.setText("●");
@@ -212,9 +212,9 @@ public class UserPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (btnNBlackCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput>=300) {
+					if(currentInput >= Integer.parseInt(priceNBlackCoffee.getText())) {
 						Controller.requestProduct("NBlackCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, 300);
+						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNBlackCoffee.getText()));
 						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 						readyLight1.setText("●");
 						btnNBlackCoffee.setText("●");
@@ -227,9 +227,9 @@ public class UserPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (btnNSugarCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput>=300) {
+					if(currentInput >= Integer.parseInt(priceNSugarCoffee.getText())) {
 						Controller.requestProduct("NSugarCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, 300);
+						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCoffee.getText()));
 						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 						readyLight1.setText("●");
 						btnNSugarCoffee.setText("●");
@@ -242,9 +242,9 @@ public class UserPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (btnNSugarCreamCoffee.getText() == "O" && readyLight1.getText().equals("O")) {
-					if(currentInput>=300) {
+					if(currentInput >= Integer.parseInt(priceNSugarCreamCoffee.getText())) {
 						Controller.requestProduct("NSugarCreamCoffee");
-						currentInput=MoneyManager.calculateChange(currentInput, 300);
+						currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceNSugarCreamCoffee.getText()));
 						moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 						readyLight1.setText("●");
 						btnNSugarCreamCoffee.setText("●");
@@ -318,9 +318,9 @@ public class UserPanel {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) {
 				  if (btnYulmu.getText() == "O" && readyLight1.getText().equals("O")) {
-						if(currentInput>=300) {
+						if(currentInput >= Integer.parseInt(priceYulmu.getText())) {
 							Controller.requestProduct("Yulmu");
-							currentInput=MoneyManager.calculateChange(currentInput, 300);
+							currentInput=MoneyManager.calculateChange(currentInput,  Integer.parseInt(priceYulmu.getText()));
 							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 							readyLight1.setText("●");
 							btnYulmu.setText("●");
@@ -333,9 +333,9 @@ public class UserPanel {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) { 
 				  if (btnBlackTea.getText() == "O" && readyLight1.getText().equals("O")) {
-						if(currentInput>=300) {
+						if(currentInput >= Integer.parseInt(priceBlackTea.getText())) {
 							Controller.requestProduct("BlackTea");
-							currentInput=MoneyManager.calculateChange(currentInput, 300);
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceBlackTea.getText()));
 							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 							readyLight1.setText("●");
 							btnBlackTea.setText("●");
@@ -348,9 +348,9 @@ public class UserPanel {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) { 
 				  if (btnCocoa.getText() == "O" && readyLight1.getText().equals("O")) {
-						if(currentInput>=300) {
+						if(currentInput >= Integer.parseInt(priceCocoa.getText())) {
 							Controller.requestProduct("Cocoa");
-							currentInput=MoneyManager.calculateChange(currentInput, 300);
+							currentInput=MoneyManager.calculateChange(currentInput, Integer.parseInt(priceCocoa.getText()));
 							moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 							readyLight1.setText("●");
 							btnCocoa.setText("●");
