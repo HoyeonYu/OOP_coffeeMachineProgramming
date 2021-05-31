@@ -24,8 +24,7 @@ public class UserPanel {
 		panelWrapper.setVisible(true);
 		panelWrapper.setSize(700, 500);
 		panelWrapper.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JPanel darkGrayJPanel = new JPanel();		
+				
 		darkGrayJPanel.setBackground(new Color(80, 80, 80));
 		panelWrapper.add(darkGrayJPanel);
 		darkGrayJPanel.setBounds(0, 0, 500, 500);
@@ -816,6 +815,9 @@ public class UserPanel {
 									  catch (NumberFormatException e2) {
 										  System.out.println("Num Exception");
 									  }
+									  
+									  showNoCup();
+									  showNoIngredient();
 								  }
 							  });
 							  
@@ -893,6 +895,7 @@ public class UserPanel {
 						  //currentInput+=1000;
 						  currentInput=MoneyManager.calculateTotalInput(currentInput, 1000);
 						  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+						  MoneyManager.count1000++;
 					  }
 				  });
 		  
@@ -907,6 +910,7 @@ public class UserPanel {
 			  public void actionPerformed(ActionEvent e) {
 				  currentInput=MoneyManager.calculateTotalInput(currentInput, 500);
 				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+				  MoneyManager.count500++;
 			  }
 		  });
 		  
@@ -921,6 +925,7 @@ public class UserPanel {
 			  public void actionPerformed(ActionEvent e) {
 				  currentInput=MoneyManager.calculateTotalInput(currentInput, 100);
 				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+				  MoneyManager.count100++;
 			  }
 		  });
 		  
@@ -935,6 +940,7 @@ public class UserPanel {
 			  public void actionPerformed(ActionEvent e) {
 				  currentInput=MoneyManager.calculateTotalInput(currentInput, 50);
 				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+				  MoneyManager.count50++;
 			  }
 		  });
 		  
@@ -949,6 +955,7 @@ public class UserPanel {
 			  public void actionPerformed(ActionEvent e) {
 				  currentInput=MoneyManager.calculateTotalInput(currentInput, 10);
 				  moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+				  MoneyManager.count10++;
 			  }
 		  });
 
@@ -967,9 +974,16 @@ public class UserPanel {
 		  btnChange.addActionListener(new ActionListener() {
 			  @Override
 			  public void actionPerformed(ActionEvent e) {
-				  changeOut.setText(Integer.toString(currentInput));
-				  currentInput=0;
-				  moneyLED.setText(currentInput+"\n판매중");
+				  //잔돈부족
+				  if(MoneyManager.notEnoughChange()) {
+					  moneyLED.setText("잔돈 부족 \n판매자에 문의하세요.");
+				  }
+				  //잔돈충분
+				  else {
+					  changeOut.setText(Integer.toString(currentInput));
+					  currentInput=0;
+					  moneyLED.setText(currentInput+"\n판매중");
+				  }
 			  }
 		  });
 		  darkGrayJPanel.repaint();
@@ -984,13 +998,20 @@ public class UserPanel {
 		  changeOut.setVisible(true);
 		  darkGrayJPanel.add(changeOut);
 		  darkGrayJPanel.repaint();
+		  
+		  /**************************if no cup*****************************/
+		  showNoCup();
+		  
+		  /**************************if no ingredient**********************/
+		  showNoIngredient();
 	}
 	
 	public static int currentInput=0;
 	
 	public static JPanel whiteJPanel = new JPanel();
+	public static JPanel darkGrayJPanel = new JPanel();
 	
-	public JTextPane moneyLED = new JTextPane();
+	public static JTextPane moneyLED = new JTextPane();
 	public static JTextPane AlertLED = new JTextPane();
 	public JButton btnChange = new JButton();
 	public JButton changeOut = new JButton();
@@ -1102,6 +1123,20 @@ public class UserPanel {
 			btnBlackTea.setText("O");
 			btnCocoa.setText("O");
 			whiteJPanel.repaint();
+		}
+	}
+	
+	public static void showNoCup() {
+		if(CupManager.getCupCount()==0) {
+			moneyLED.setText("컵 부족");
+			darkGrayJPanel.repaint();
+		}
+	}
+	
+	public static void showNoIngredient() {
+		if(Manufacture.hasIngredient==false) {
+			moneyLED.setText("재료 부족");
+			darkGrayJPanel.repaint();
 		}
 	}
 

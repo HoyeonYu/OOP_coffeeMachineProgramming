@@ -31,6 +31,9 @@ public class IngredientManager {
     	if (ingredient != null) {
 			Manufacture.hasIngredient = true;
 		}
+    	else {
+			Manufacture.hasIngredient = false;
+		}
     }
 
     public void getIngredientCount(String ingredient) {

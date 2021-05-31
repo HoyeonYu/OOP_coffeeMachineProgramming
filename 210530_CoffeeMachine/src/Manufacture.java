@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Manufacture {
 	
-	public static boolean hasIngredient;
+	public static boolean hasIngredient = true;
 
     /**
      * Default constructor

@@ -19,7 +19,7 @@ public class CupManager {
 		return CupCount;
     }
 
-    public int getCupCount() {
+    public static int getCupCount() {
         // TODO implement here
     	return CupCount;
     }
@@ -37,7 +37,7 @@ public class CupManager {
 		UserPanel.Product.setVisible(true);
 		
 		if (newCupCount == 0) {
-			UserPanel.AlertLED.setText("컵 부족");
+			UserPanel.moneyLED.setText("컵 부족");
 		}
     }
 }

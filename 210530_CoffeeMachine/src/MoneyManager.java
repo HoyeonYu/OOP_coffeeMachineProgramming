@@ -70,5 +70,18 @@ public class MoneyManager {
     public static int getCoinStackTotal() {
     	return (count1000 + count500 + count100 + count50 + count10);
     }
+    
+    public static int getCurrentBalanceTotal() {
+    	return (count1000*1000 + count500*500 + count100*100 + count50*50 + count10*10);
+    }
+    
+    public static boolean notEnoughChange() {
+    	if(UserPanel.currentInput>getCurrentBalanceTotal()) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    }
 
 }
