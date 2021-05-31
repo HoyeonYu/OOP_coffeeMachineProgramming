@@ -1269,11 +1269,21 @@ public class UserPanel {
 			moneyLED.setText("컵 부족");
 			darkGrayJPanel.repaint();
 		}
+		
+		else {
+			moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
+			darkGrayJPanel.repaint();
+		}
 	}
 	
 	public static void showNoIngredient() {
 		if(Manufacture.hasIngredient==false) {
 			moneyLED.setText("재료 부족");
+			darkGrayJPanel.repaint();
+		}
+		
+		else {
+			moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 			darkGrayJPanel.repaint();
 		}
 	}
