@@ -64,12 +64,11 @@ public class MoneyManager {
     }
 
     public int setMoneyCount(String moneyType, int count) {
-        // TODO implement here
         return 0;
     }
 
     public static int getCoinStackTotal() {
-    	return (count1000 + count500 + count50 + count10);
+    	return (count1000 + count500 + count100 + count50 + count10);
     }
 
 }
