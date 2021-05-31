@@ -61,11 +61,11 @@ public class UserPanel {
 		panelPremium.add(labelPBlackCoffeeLabel);
 		labelPBlackCoffeeLabel.setAlignment(Label.CENTER);
 
-		JLabel labelPricePBlackCoffee = new JLabel("$" + pricePBlackCoffee.getText());
-		labelPricePBlackCoffee.setBackground(new Color(255, 255, 255));
-		labelPricePBlackCoffee.setHorizontalAlignment(SwingConstants.CENTER);
-		labelPricePBlackCoffee.setBounds(1, 41, 95, 15);
-		panelPremium.add(labelPricePBlackCoffee);
+		JLabel labelPricePBlackCoffeeJLabel = new JLabel("$" + pricePBlackCoffee.getText());
+		labelPricePBlackCoffeeJLabel.setBackground(new Color(255, 255, 255));
+		labelPricePBlackCoffeeJLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		labelPricePBlackCoffeeJLabel.setBounds(1, 41, 95, 15);
+		panelPremium.add(labelPricePBlackCoffeeJLabel);
 
 		btnPSugarCoffee.setBackground(Color.DARK_GRAY);
 		btnPSugarCoffee.setForeground(new Color(255, 51, 51));
@@ -256,7 +256,6 @@ public class UserPanel {
 		panelNormal.repaint();
 
 		/************ Woori Coffee *****************/
-				  
 		  JLabel labelWooriCoffee = new JLabel("우리차");
 		  labelWooriCoffee.setHorizontalAlignment(SwingConstants.LEFT);
 		  labelWooriCoffee.setBounds(18, 192, 57, 20);
@@ -382,9 +381,7 @@ public class UserPanel {
 		  readyLight3.setBounds(160, 300, 20, 20);
 		  whiteJPanel.add(readyLight3);
 
-
 		  /***********  Show Empty or Filled Cup  *************/
-			
 		  ImageIcon imageIcon = new ImageIcon(new ImageIcon("emptyCoffee.jpg").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
 		  JLabel label = new JLabel();
 		  label.setIcon(imageIcon);
@@ -393,7 +390,6 @@ public class UserPanel {
 		  label.setVisible(true);
 		  whiteJPanel.add(label);		  
 		  whiteJPanel.repaint();	
-		  
 		  
 		  /***********  Show Input Price Money LED *************/
 		  darkGrayJPanel.add(moneyLED);
@@ -441,7 +437,8 @@ public class UserPanel {
 				  darkGrayPWJPanel.add(whitePWJPanel);
 				  whitePWJPanel.setBounds(10, 10, 300, 440);
 				  whitePWJPanel.setLayout(null);
-				  
+
+				  /*************** Password Panel ***************/
 				  JTextPane passwordLEDJTextPane = new JTextPane();
 				  passwordLEDJTextPane.setBackground(new Color(255, 255, 255));
 				  passwordLEDJTextPane.setLocation(320, 70);
@@ -478,6 +475,7 @@ public class UserPanel {
 				  openBtn.setBounds(340, 430, 60, 20);
 				  darkGrayPWJPanel.add(openBtn);
 
+				  /*************** Control Panel ***************/
 				  openBtn.addActionListener(new ActionListener() {
 					  @Override
 					  public void actionPerformed(ActionEvent e) {
@@ -496,8 +494,160 @@ public class UserPanel {
 							  whiteControlJPanel.setBounds(10, 10, 300, 440);
 							  whiteControlJPanel.setLayout(null);
 							  
-							  /************ Have to Add Grid Layout 12 X 3 ************/
+							  /************ Left Control Panel ************/
 							  
+							  JLabel leftControlIngAmountJLabel = new JLabel("재료양");
+							  leftControlIngAmountJLabel.setLocation(120, 10);
+							  leftControlIngAmountJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlIngAmountJLabel); 
+
+							  JLabel leftControlPriceJLabel = new JLabel("가격");
+							  leftControlPriceJLabel.setLocation(225, 10);
+							  leftControlPriceJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlPriceJLabel); 
+
+							  /************ Left Control Panel P Coffee ************/
+							  JLabel leftControlPCoffeeJLabel = new JLabel("고급커피");
+							  leftControlPCoffeeJLabel.setLocation(20, 40);
+							  leftControlPCoffeeJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlPCoffeeJLabel); 
+
+							  countPCoffee.setLocation(100, 40);
+							  countPCoffee.setSize(80, 20);
+							  countPCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(countPCoffee); 
+							  
+							  pricePBlackCoffee.setLocation(200, 40);
+							  pricePBlackCoffee.setSize(80, 20);
+							  pricePBlackCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(pricePBlackCoffee); 
+							  
+							  JLabel leftControlPSugarCoffeeJLabel = new JLabel("고급설탕커피");
+							  leftControlPSugarCoffeeJLabel.setLocation(55, 70);
+							  leftControlPSugarCoffeeJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlPSugarCoffeeJLabel); 
+							  
+							  pricePSugarCoffee.setLocation(200, 70);
+							  pricePSugarCoffee.setSize(80, 20);
+							  pricePSugarCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(pricePSugarCoffee); 
+							  
+							  JLabel leftControlPSugarCreamCoffeeJLabel = new JLabel("고급설탕크림커피");
+							  leftControlPSugarCreamCoffeeJLabel.setLocation(45, 100);
+							  leftControlPSugarCreamCoffeeJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlPSugarCreamCoffeeJLabel); 
+							  
+							  pricePSugarCreamCoffee.setLocation(200, 100);
+							  pricePSugarCreamCoffee.setSize(80, 20);
+							  pricePSugarCreamCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(pricePSugarCreamCoffee); 
+
+							  /************ Left Control Panel N Coffee ************/
+							  JLabel leftControlNCoffeeJLabel = new JLabel("일반커피");
+							  leftControlNCoffeeJLabel.setLocation(20, 130);
+							  leftControlNCoffeeJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlNCoffeeJLabel); 
+
+							  countNCoffee.setLocation(100, 130);
+							  countNCoffee.setSize(80, 20);
+							  countNCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(countNCoffee); 
+							  
+							  priceNBlackCoffee.setLocation(200, 130);
+							  priceNBlackCoffee.setSize(80, 20);
+							  priceNBlackCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(priceNBlackCoffee); 
+							  
+							  JLabel leftControlNSugarCoffeeJLabel = new JLabel("일반설탕커피");
+							  leftControlNSugarCoffeeJLabel.setLocation(55, 160);
+							  leftControlNSugarCoffeeJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlNSugarCoffeeJLabel); 
+							  
+							  priceNSugarCoffee.setLocation(200, 160);
+							  priceNSugarCoffee.setSize(80, 20);
+							  priceNSugarCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(priceNSugarCoffee); 
+							  
+							  JLabel leftControlNSugarCreamCoffeeJLabel = new JLabel("일반설탕크림커피");
+							  leftControlNSugarCreamCoffeeJLabel.setLocation(45, 190);
+							  leftControlNSugarCreamCoffeeJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlNSugarCreamCoffeeJLabel); 
+							  
+							  priceNSugarCreamCoffee.setLocation(200, 190);
+							  priceNSugarCreamCoffee.setSize(80, 20);
+							  priceNSugarCreamCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(priceNSugarCreamCoffee); 
+
+							  /************ Left Control Panel ETC ************/
+							  JLabel leftControlCreamJLabel = new JLabel("크림");
+							  leftControlCreamJLabel.setLocation(40, 220);
+							  leftControlCreamJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlCreamJLabel); 
+							  
+							  countCream.setLocation(100, 220);
+							  countCream.setSize(80, 20);
+							  countCream.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(countCream);  
+
+							  JLabel leftControlSugarJLabel = new JLabel("설탕");
+							  leftControlSugarJLabel.setLocation(40, 250);
+							  leftControlSugarJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlSugarJLabel); 
+							  
+							  countSugar.setLocation(100, 250);
+							  countSugar.setSize(80, 20);
+							  countSugar.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(countSugar);  
+
+							  JLabel leftControlYulmuJLabel = new JLabel("율무차");
+							  leftControlYulmuJLabel.setLocation(35, 280);
+							  leftControlYulmuJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlYulmuJLabel); 
+							  
+							  countYulmu.setLocation(100, 280);
+							  countYulmu.setSize(80, 20);
+							  countYulmu.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(countYulmu);  
+							  
+							  priceYulmu.setLocation(200, 280);
+							  priceYulmu.setSize(80, 20);
+							  priceYulmu.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(priceYulmu); 
+
+							  JLabel leftControlBlackTeaJLabel = new JLabel("홍차");
+							  leftControlBlackTeaJLabel.setLocation(40, 310);
+							  leftControlBlackTeaJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlBlackTeaJLabel); 
+							  
+							  countBlackTea.setLocation(100, 310);
+							  countBlackTea.setSize(80, 20);
+							  countBlackTea.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(countBlackTea);  
+							  
+							  priceBlackTea.setLocation(200, 310);
+							  priceBlackTea.setSize(80, 20);
+							  priceBlackTea.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(priceBlackTea); 
+
+
+							  JLabel leftControlCocoaJLabel = new JLabel("코코아");
+							  leftControlCocoaJLabel.setLocation(35, 340);
+							  leftControlCocoaJLabel.setSize(170, 25);
+							  whiteControlJPanel.add(leftControlCocoaJLabel); 
+							  
+							  countCocoa.setLocation(100, 340);
+							  countCocoa.setSize(80, 20);
+							  countCocoa.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(countCocoa);  
+							  
+							  priceCocoa.setLocation(200, 340);
+							  priceCocoa.setSize(80, 20);
+							  priceCocoa.setHorizontalAlignment(SwingConstants.CENTER);
+							  whiteControlJPanel.add(priceCocoa); 
+							  
+							  /************ Right Control Panel ************/
+
+							  /************ Water Max Temperature Controller ************/
 							  JLabel waterMaxTempJLabel = new JLabel("물 최대 온도(℃)");
 							  waterMaxTempJLabel.setForeground(new Color(255, 255, 255));
 							  waterMaxTempJLabel.setLocation(320, 30);
@@ -512,6 +662,7 @@ public class UserPanel {
 							  waterMaxTempJTextField.setVisible(true);
 							  darkGrayControlJPanel.add(waterMaxTempJTextField); 
 
+							  /************ Cup Controller ************/
 							  JLabel waterCupCountJLabel = new JLabel("컵 개수");
 							  waterCupCountJLabel.setForeground(new Color(255, 255, 255));
 							  waterCupCountJLabel.setLocation(320, 90);
@@ -525,6 +676,7 @@ public class UserPanel {
 							  cupCount.setValue(CupManager.CupCount);
 							  darkGrayControlJPanel.add(cupCount); 
 
+							  /************ Money Controller ************/
 							  JLabel totalCountJLabel = new JLabel("TOTAL");
 							  totalCountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
 							  totalCountJLabel.setForeground(new Color(255, 255, 255));
@@ -549,13 +701,12 @@ public class UserPanel {
 							  p1000CountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(p1000CountJLabel); 
 
-							  JTextField p1000CountJTextField = new JTextField();
-							  p1000CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
-							  p1000CountJTextField.setLocation(400, 200);
-							  p1000CountJTextField.setSize(90, 25);
-							  p1000CountJTextField.setVisible(true);
-							  p1000CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("1000")));
-							  darkGrayControlJPanel.add(p1000CountJTextField); 
+							  count1000.setHorizontalAlignment(SwingConstants.CENTER);
+							  count1000.setLocation(400, 200);
+							  count1000.setSize(90, 25);
+							  count1000.setVisible(true);
+							  count1000.setText(Integer.toString(MoneyManager.getMoneyCount("1000")));
+							  darkGrayControlJPanel.add(count1000); 
 
 							  JLabel p500CountJLabel = new JLabel("500원");
 							  p500CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -565,13 +716,11 @@ public class UserPanel {
 							  p500CountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(p500CountJLabel); 
 
-							  JTextField p500CountJTextField = new JTextField();
-							  p500CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
-							  p500CountJTextField.setLocation(400, 230);
-							  p500CountJTextField.setSize(90, 25);
-							  p500CountJTextField.setVisible(true);
-							  p500CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("500")));
-							  darkGrayControlJPanel.add(p500CountJTextField); 
+							  count500.setHorizontalAlignment(SwingConstants.CENTER);
+							  count500.setLocation(400, 230);
+							  count500.setSize(90, 25);
+							  count500.setVisible(true);
+							  darkGrayControlJPanel.add(count500); 
 
 							  JLabel p100CountJLabel = new JLabel("100원");
 							  p100CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -581,13 +730,11 @@ public class UserPanel {
 							  p100CountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(p100CountJLabel); 
 
-							  JTextField p100CountJTextField = new JTextField();
-							  p100CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
-							  p100CountJTextField.setLocation(400, 260);
-							  p100CountJTextField.setSize(90, 25);
-							  p100CountJTextField.setVisible(true);
-							  p100CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("100")));
-							  darkGrayControlJPanel.add(p100CountJTextField); 
+							  count100.setHorizontalAlignment(SwingConstants.CENTER);
+							  count100.setLocation(400, 260);
+							  count100.setSize(90, 25);
+							  count100.setVisible(true);
+							  darkGrayControlJPanel.add(count100); 
 
 							  JLabel p50CountJLabel = new JLabel("50원");
 							  p50CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -597,13 +744,11 @@ public class UserPanel {
 							  p50CountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(p50CountJLabel); 
 
-							  JTextField p50CountJTextField = new JTextField();
-							  p50CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
-							  p50CountJTextField.setLocation(400, 290);
-							  p50CountJTextField.setSize(90, 25);
-							  p50CountJTextField.setVisible(true);
-							  p50CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("50")));
-							  darkGrayControlJPanel.add(p50CountJTextField); 
+							  count50.setHorizontalAlignment(SwingConstants.CENTER);
+							  count50.setLocation(400, 290);
+							  count50.setSize(90, 25);
+							  count50.setVisible(true);
+							  darkGrayControlJPanel.add(count50); 
 
 							  JLabel p10CountJLabel = new JLabel("10원");
 							  p10CountJLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -613,14 +758,13 @@ public class UserPanel {
 							  p10CountJLabel.setVisible(true);
 							  darkGrayControlJPanel.add(p10CountJLabel); 
 
-							  JTextField p10CountJTextField = new JTextField();
-							  p10CountJTextField.setHorizontalAlignment(SwingConstants.CENTER);
-							  p10CountJTextField.setLocation(400, 320);
-							  p10CountJTextField.setSize(90, 25);
-							  p10CountJTextField.setVisible(true);
-							  p10CountJTextField.setText(Integer.toString(MoneyManager.getMoneyCount("10")));
-							  darkGrayControlJPanel.add(p10CountJTextField); 
-							  
+							  count10.setHorizontalAlignment(SwingConstants.CENTER);
+							  count10.setLocation(400, 320);
+							  count10.setSize(90, 25);
+							  count10.setVisible(true);
+							  darkGrayControlJPanel.add(count10); 
+
+							  /************ Apply Button ************/
 							  JButton controlAdminApplyBtn = new JButton("적용");		  
 							  controlAdminApplyBtn.setBackground(Color.DARK_GRAY); 
 							  controlAdminApplyBtn.setForeground(new Color(255, 255, 255)); 
@@ -631,13 +775,36 @@ public class UserPanel {
 								  @Override
 								  public void actionPerformed(ActionEvent e) {
 									  CupManager.CupCount = (int) cupCount.getValue();
+									  
 									  try {
-										  MoneyManager.count1000 = Integer.parseInt(p1000CountJTextField.getText());
-										  MoneyManager.count500 = Integer.parseInt(p500CountJTextField.getText());
-										  MoneyManager.count100 = Integer.parseInt(p100CountJTextField.getText());
-										  MoneyManager.count50 = Integer.parseInt(p50CountJTextField.getText());
-										  MoneyManager.count10 = Integer.parseInt(p10CountJTextField.getText());
-										  System.out.println(MoneyManager.count1000);
+										  IngredientManager.countPCoffee = Integer.parseInt(countPCoffee.getText());
+										  pricePBlackCoffee.setText(pricePBlackCoffee.getText());
+										  pricePSugarCoffee.setText(pricePSugarCoffee.getText());
+										  pricePSugarCreamCoffee.setText(pricePSugarCreamCoffee.getText());
+
+										  IngredientManager.countNCoffee = Integer.parseInt(countNCoffee.getText());
+										  priceNBlackCoffee.setText(priceNBlackCoffee.getText());
+										  priceNSugarCoffee.setText(priceNSugarCoffee.getText());
+										  priceNSugarCreamCoffee.setText(priceNSugarCreamCoffee.getText());
+
+										  IngredientManager.countCream = Integer.parseInt(countCream.getText());
+										  IngredientManager.countSugar = Integer.parseInt(countSugar.getText());
+										  
+										  IngredientManager.countYulmu = Integer.parseInt(countYulmu.getText());
+										  priceYulmu.setText(priceYulmu.getText());
+
+										  IngredientManager.countBlackTea = Integer.parseInt(countBlackTea.getText());
+										  priceBlackTea.setText(priceBlackTea.getText());
+
+										  IngredientManager.countCocoa = Integer.parseInt(countCocoa.getText());
+										  priceCocoa.setText(priceCocoa.getText());
+										  
+										  MoneyManager.count1000 = Integer.parseInt(count1000.getText());
+										  MoneyManager.count500 = Integer.parseInt(count500.getText());
+										  MoneyManager.count100 = Integer.parseInt(count100.getText());
+										  MoneyManager.count50 = Integer.parseInt(count50.getText());
+										  MoneyManager.count10 = Integer.parseInt(count10.getText());
+										  
 										  totalCountJTextField.setText(Integer.toString(MoneyManager.getCoinStackTotal()));
 									  } 
 									  
@@ -658,6 +825,20 @@ public class UserPanel {
 								  public void actionPerformed(ActionEvent e) {
 									  darkGrayControlJPanel.setVisible(false);
 									  darkGrayJPanel.setVisible(true);
+
+									  labelPricePBlackCoffeeJLabel.setText("$" + pricePBlackCoffee.getText());
+									  labelPricePSugarCoffeeJLabel.setText("$" + pricePSugarCoffee.getText());
+									  labelPricePSugarCreamCoffeeJLabel.setText("$" + pricePSugarCreamCoffee.getText());
+
+									  labelPriceNBlackCoffeeJLabel.setText("$" + priceNBlackCoffee.getText());
+									  labelPriceNSugarCoffeeJLabel.setText("$" + priceNSugarCoffee.getText());
+									  labelPriceNSugarCreamCoffeeJLabel.setText("$" + priceNSugarCreamCoffee.getText());
+									  
+									  labelPriceYulmuJLabel.setText("$" + priceYulmu.getText());
+									  labelPriceBlackTeaJLabel.setText("$" + priceBlackTea.getText());
+									  labelPriceCocoaJLabel.setText("$" + priceCocoa.getText());
+
+									  System.out.println("pricePBlackCoffee: " + pricePBlackCoffee.getText());
 								  }
 							  });
 						  }
@@ -831,20 +1012,20 @@ public class UserPanel {
 	public JButton lock_out = new JButton();
 	public JButton lock_out2 = new JButton();
 	
-	public JTextField countPCoffee = new JTextField();
-	public JTextField countNCoffee = new JTextField();
-	public JTextField countCream = new JTextField();
-	public JTextField countSugar = new JTextField();
-	public JTextField countYulmu = new JTextField();
-	public JTextField countBlackTea = new JTextField();
-	public JTextField countCocoa = new JTextField();
+	public JTextField countPCoffee = new JTextField(Integer.toString(IngredientManager.countPCoffee));
+	public JTextField countNCoffee = new JTextField(Integer.toString(IngredientManager.countNCoffee));
+	public JTextField countCream = new JTextField(Integer.toString(IngredientManager.countCream));
+	public JTextField countSugar = new JTextField(Integer.toString(IngredientManager.countSugar));
+	public JTextField countYulmu = new JTextField(Integer.toString(IngredientManager.countYulmu));
+	public JTextField countBlackTea = new JTextField(Integer.toString(IngredientManager.countBlackTea));
+	public JTextField countCocoa = new JTextField(Integer.toString(IngredientManager.countCocoa));
 	public JTextField countTotal = new JTextField();
 	
-	public JButton count1000 = new JButton();
-	public JTextField count500 = new JTextField();
-	public JTextField count100 = new JTextField();
-	public JTextField count50 = new JTextField();
-	public JTextField count10 = new JTextField();
+	public JTextField count1000 = new JTextField(Integer.toString(MoneyManager.count1000));
+	public JTextField count500 = new JTextField(Integer.toString(MoneyManager.count500));
+	public JTextField count100 = new JTextField(Integer.toString(MoneyManager.count100));
+	public JTextField count50 = new JTextField(Integer.toString(MoneyManager.count50));
+	public JTextField count10 = new JTextField(Integer.toString(MoneyManager.count10));
 	
 	public static JSpinner cupCount = new JSpinner();
 	
