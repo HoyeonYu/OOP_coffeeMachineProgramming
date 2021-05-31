@@ -383,12 +383,11 @@ public class UserPanel {
 
 		  /***********  Show Empty or Filled Cup  *************/
 		  ImageIcon imageIcon = new ImageIcon(new ImageIcon("emptyCoffee.jpg").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
-		  JLabel label = new JLabel();
-		  label.setIcon(imageIcon);
-		  label.setLocation(40, 280);
-		  label.setSize(200, 200);
-		  label.setVisible(true);
-		  whiteJPanel.add(label);		  
+		  coffeeCupLabel.setIcon(imageIcon);
+		  coffeeCupLabel.setLocation(40, 280);
+		  coffeeCupLabel.setSize(200, 200);
+		  coffeeCupLabel.setVisible(true);
+		  whiteJPanel.add(coffeeCupLabel);		  
 		  whiteJPanel.repaint();	
 		  
 		  /***********  Show Input Price Money LED *************/
@@ -1005,6 +1004,7 @@ public class UserPanel {
 	
 	public static ImageIcon cup = new ImageIcon("emptyCoffee.jpg");
 	public static ImageIcon coffee = new ImageIcon("filledCoffee.png");
+	public static JLabel coffeeCupLabel = new JLabel();
 	
 	public JButton btn1000 = new JButton();
 	public JButton btn500 = new JButton();

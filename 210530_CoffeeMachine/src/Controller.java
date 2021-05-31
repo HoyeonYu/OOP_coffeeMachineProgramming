@@ -1,4 +1,5 @@
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.util.*;
 import javax.swing.*;
@@ -62,6 +63,9 @@ public class Controller {
 					Thread.sleep(3000);
 					Manufacture.mix(water, ingredient);
 					UserPanel.readyLight3.setText("●");
+					ImageIcon imageIcon_full = new ImageIcon(new ImageIcon("fullCoffee.png").getImage()
+							.getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+					UserPanel.coffeeCupLabel.setIcon(imageIcon_full);
 					System.out.println("3스텝");
 					System.out.println("-------- 제조 완성");
 				}
