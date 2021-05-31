@@ -1220,6 +1220,8 @@ public class UserPanel {
 	private String password = "1";
 	private JTextField textareaPassword = new JTextField();
 	private String passwordEntered = "";
+	
+	public static boolean isCupAvailble = true;
 
 	public void acceptMoney(ActionEvent e) {
 		// TODO implement here
@@ -1266,11 +1268,13 @@ public class UserPanel {
 	
 	public static void showNoCup() {
 		if(CupManager.getCupCount()==0) {
+			isCupAvailble = false;
 			moneyLED.setText("컵 부족");
 			darkGrayJPanel.repaint();
 		}
 		
 		else {
+			isCupAvailble = true;
 			moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 			darkGrayJPanel.repaint();
 		}
@@ -1282,10 +1286,9 @@ public class UserPanel {
 			darkGrayJPanel.repaint();
 		}
 		
-		else {
+		else if (isCupAvailble) {
 			moneyLED.setText(Integer.toString(currentInput)+"\n판매중");
 			darkGrayJPanel.repaint();
 		}
 	}
-
 }
