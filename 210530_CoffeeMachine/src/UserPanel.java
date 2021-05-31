@@ -1101,22 +1101,27 @@ public class UserPanel {
 
 				  if (currentInput / 1000 > 0 && currentInput / 1000 <= MoneyManager.count1000) {
 					  MoneyManager.count1000--;
+					  currentInput -= 1000;
 				  }
 					
-				  else if (currentInput / 500 > 0 && currentInput / 500 <= MoneyManager.count500) {
+				  if (currentInput / 500 > 0 && currentInput / 500 <= MoneyManager.count500) {
 					  MoneyManager.count500--;
+					  currentInput -= 500;
 				  }
 					
-				  else if (currentInput / 100 > 0 && currentInput / 100 <= MoneyManager.count100) {
+				  if (currentInput / 100 > 0 && currentInput / 100 <= MoneyManager.count100) {
 					  MoneyManager.count100--;
+					  currentInput -= 100;
 				  }
 					
-				  else if (currentInput / 50 > 0 && currentInput / 50 <= MoneyManager.count50) {
+				  if (currentInput / 50 > 0 && currentInput / 50 <= MoneyManager.count50) {
 					  MoneyManager.count50--;
+					  currentInput -= 50;
 				  }
 					
-				  else if (currentInput / 10 > 0 && currentInput / 10 <= MoneyManager.count10) {
+				  if (currentInput / 10 > 0 && currentInput / 10 <= MoneyManager.count10) {
 					  MoneyManager.count10--;
+					  currentInput -= 10;
 				  }
 				  
 				  currentInput = 0;
