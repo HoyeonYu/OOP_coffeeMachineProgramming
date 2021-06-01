@@ -49,7 +49,7 @@ public class Controller {
 
 	public static void requestProduct(String selection) {
 		// TODO implement here
-		compareInputPrice(0);
+		//compareInputPrice(0);
 		
 		Thread stepLightThread = new Thread() {
 			public void run() {
@@ -99,17 +99,17 @@ public class Controller {
 		
 		stepLightThread.start();
 		
-		Controller.productPrice = DataManager.getPrice(selection);
-		int change = MoneyManager.calculateChange(getTotalInput(), Controller.productPrice);
-		setTotalInput(change);
-		UserPanel.showMoneyLED(getTotalInput());
-		compareInputPrice(getTotalInput());
+		//Controller.productPrice = DataManager.getPrice(selection);
+		//int change = MoneyManager.calculateChange(getTotalInput(), Controller.productPrice);
+		//setTotalInput(change);
+		//UserPanel.showMoneyLED(getTotalInput());
+		//compareInputPrice(getTotalInput());
 		countSetText();	
 	}
 
-	public static void countSetText() { //nu
+	public static void countSetText() { 
 		// TODO implement here
-		System.out.println("MoneyLED: "+UserPanel.moneyLED.getText());
+		System.out.println("Setting MoneyLED...");
 	}
 
 	public void countUpdate() { //nu
