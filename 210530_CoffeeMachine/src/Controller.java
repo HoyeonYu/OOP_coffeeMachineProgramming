@@ -13,30 +13,38 @@ public class Controller {
 	private static int productPrice;
 	public static boolean isRequestFinished = false;
 
-	public Boolean checkValidMoney(Object source) {
+	public Boolean checkValidMoney(Object source) { //nu
 		// TODO implement here
 		return null;
 	}
 	
-	public static int getTotalInput() {
+	public static int getTotalInput() { //nu
 		// TODO implement here
-		return 0;
+		return UserPanel.currentInput;
 	}
 
-	public static void setTotalInput(int totalInput) {
+	public static void setTotalInput(int totalInput) { //nu
 		// TODO implement here
+		UserPanel.currentInput=totalInput;
 	}
 
-	public static void compareInputPrice(int total) {
+	public static void compareInputPrice(int total) { //nu
 		// TODO implement here
+		if(total<UserPanel.currentInput) {
+			System.out.println(total+"<"+UserPanel.currentInput);
+		}
 	}
 	
-	public void addCustomerInput(int newInput) {
+	public void addCustomerInput(int newInput) { //nu
 		// TODO implement here
+		UserPanel.currentInput+=newInput;
 	}
 
-	public void requestChange() {
+	public void requestChange() { //nu
 		// TODO implement here
+		if(isRequestFinished) {
+			System.out.println("잔돈 요청 가능");
+		}
 	}
 
 	public static void requestProduct(String selection) {
@@ -99,12 +107,14 @@ public class Controller {
 		countSetText();	
 	}
 
-	public static void countSetText() {
+	public static void countSetText() { //nu
 		// TODO implement here
+		System.out.println("MoneyLED: "+UserPanel.moneyLED.getText());
 	}
 
-	public void countUpdate() {
+	public void countUpdate() { //nu
 		// TODO implement here
+		System.out.println("CoinStackTotal: "+MoneyManager.getCoinStackTotal());
 	}
 
 }

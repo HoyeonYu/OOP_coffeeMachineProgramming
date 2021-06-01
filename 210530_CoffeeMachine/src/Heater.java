@@ -22,27 +22,20 @@ public class Heater {
      */
     private TemperatureSensor temperatureSensor;
 
-
-
     /**
      * 
      */
-    void Heater() {
+    public void operating() { //nu
         // TODO implement here
+    	System.out.println("operating...");
     }
 
     /**
      * 
      */
-    public void operating() {
+    public void heat_Water() { //nu
         // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public void heat_Water() {
-        // TODO implement here
+    	System.out.println("heat water requested...");
     }
 
 }

@@ -9,13 +9,84 @@ public class DataManager {
     private int productPrice;
     private static List<Object> ingredient = new ArrayList<>();
 
-    public static int getPrice(String selection) {
+    public static int getPrice(String selection) { //nu
         // TODO implement here
-        return 0;
+    	switch (selection) {
+		case "PBlackCoffee":
+			return 400;
+
+		case "PSugarCoffee":
+			return 400;
+
+		case "PSugarCreamCoffee":
+			return 400;
+
+		case "NBlackCoffee":
+			return 300;
+
+		case "NSugarCoffee":
+			return 300;
+
+		case "NSugarCreamCoffee":
+			return 300;
+			
+		case "Yulmu":
+			return 300;
+
+		case "BlackTea":
+			return 300;
+			
+		case "Cocoa":
+			return 300;
+
+		default:
+			return 0;
+		}
+
     }
     
-    public void setPrice(String selection, int price) {
+    public void setPrice(String selection, int price) { //nu
         // TODO implement here
+    	switch (selection) {
+		case "PBlackCoffee":
+			price = 400;
+			break;
+
+		case "PSugarCoffee":
+			price = 400;
+			break;
+
+		case "PSugarCreamCoffee":
+			price = 400;
+			break;
+
+		case "NBlackCoffee":
+			price = 300;
+			break;
+
+		case "NSugarCoffee":
+			price = 300;
+			break;
+
+		case "NSugarCreamCoffee":
+			price = 300;
+			break;
+			
+		case "Yulmu":
+			price = 300;
+			break;
+			
+		case "BlackTea":
+			price = 300;
+			break;
+			
+		case "Cocoa":
+			price = 300;
+			break;
+
+		default:
+			break;
+		}
     }
 
     public static List<Object> getIngredient(String selectMenu) {

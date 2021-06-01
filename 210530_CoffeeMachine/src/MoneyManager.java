@@ -31,12 +31,50 @@ public class MoneyManager {
         return input;
     }
     
-    public void addMoneyCount(String moneyType) {
+    public void addMoneyCount(String moneyType) { //nu
         // TODO implement here
+    	if (moneyType == "1000") {
+    		count1000++;
+    	}
+
+    	if (moneyType == "500") {
+    		count500++;
+    	}
+
+    	if (moneyType == "100") {
+    		count100++;
+    	}
+
+    	if (moneyType == "50") {
+    		count50++;
+    	}
+
+    	if (moneyType == "10") {
+    		count10++;
+    	}
     }
     
-    public void minusMoneyCount(String moneyType) {
+    public void minusMoneyCount(String moneyType) { //nu
         // TODO implement here
+    	if (moneyType == "1000") {
+    		count1000--;
+    	}
+
+    	if (moneyType == "500") {
+    		count500--;
+    	}
+
+    	if (moneyType == "100") {
+    		count100--;
+    	}
+
+    	if (moneyType == "50") {
+    		count50--;
+    	}
+
+    	if (moneyType == "10") {
+    		count10--;
+    	}
     }
 
     public static int getMoneyCount(String moneyType) {
@@ -63,8 +101,33 @@ public class MoneyManager {
         return 0;
     }
 
-    public int setMoneyCount(String moneyType, int count) {
-        return 0;
+    public int setMoneyCount(String moneyType, int count) { //nu
+    	if (moneyType == "1000") {
+    		count1000=count;
+    		return count1000;
+    	}
+
+    	if (moneyType == "500") {
+    		count500=count;
+    		return count500;
+    	}
+
+    	if (moneyType == "100") {
+    		count100=count;
+    		return count100;
+    	}
+
+    	if (moneyType == "50") {
+    		count50=count;
+    		return count50;
+    	}
+
+    	if (moneyType == "10") {
+    		count10=count;
+    		return count10;
+    	}
+    	
+    	return 0;
     }
 
     public static int getCoinStackTotal() {

@@ -22,9 +22,11 @@ public class Manufacture {
      * @param ingredient 
      * @return
      */
-    public static Boolean mix(int water, List<Object> ingredient) {
+    public static Boolean mix(int water, List<Object> ingredient) { //nu
         // TODO implement here
-        return null;
+    	
+    	System.out.println("mixing...");
+        return true;
     }
 
 }

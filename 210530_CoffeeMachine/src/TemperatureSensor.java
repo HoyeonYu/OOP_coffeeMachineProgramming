@@ -22,15 +22,17 @@ public class TemperatureSensor {
     /**
      * 
      */
-    public void run() {
+    public void run() { //nu
         // TODO implement here
+    	System.out.println("Sensor Running...");
     }
 
     /**
      * @param newTemperature
      */
-    public void setWaterTemperature(int newTemperature) {
+    public void setWaterTemperature(int newTemperature) { //nu
         // TODO implement here
+    	WaterTemperature = newTemperature;
     }
 
     /**

@@ -36,12 +36,70 @@ public class IngredientManager {
 		}
     }
 
-    public void getIngredientCount(String ingredient) {
+    public int getIngredientCount(String ingredient) { //nu
         // TODO implement here
+    	switch (ingredient) {
+		case "countPCoffee":
+			return countPCoffee;
+
+		case "countNCoffee":
+			return countNCoffee;
+			
+		case "countSugar":
+			return countSugar;
+
+		case "countCream":
+			return countCream;
+
+		case "countYulmu":
+			return countYulmu;
+			
+		case "countBlackTea":
+			return countBlackTea;
+			
+		case "countCocoa":
+			return countCocoa;
+			
+		default:
+			return 0;
+		}
+
     }
 
-    public void setIngredientCount(String ingredient, int count) {
+    public void setIngredientCount(String ingredient, int count) {  //nu
         // TODO implement here
+    	switch (ingredient) {
+		case "PCoffee":
+			countPCoffee = count;
+			break;
+
+		case "NCoffee":
+			countNCoffee = count;
+			break;
+
+		case "Sugar":
+			countSugar = count;
+			break;
+
+		case "Cream":
+			countCream = count;
+			break;
+
+		case "Yulmu":
+			countYulmu = count;
+			break;
+
+		case "BlackTea":
+			countBlackTea = count;
+			break;
+			
+		case "Cocoa":
+			countCocoa = count;
+			break;
+			
+		default:
+			break;
+		}
     }
 
     private static void decreaseIngredientCount(String ingredientUsed) {

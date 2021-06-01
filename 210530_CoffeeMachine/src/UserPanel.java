@@ -1228,32 +1228,39 @@ public class UserPanel {
 	
 	public static boolean isCupAvailble = true;
 
-	public void acceptMoney(ActionEvent e) {
+	public void acceptMoney(ActionEvent e) { //nu
 		// TODO implement here
+		System.out.println("money accepted...");
 	}
 
-	public void showMoneyChangeExit(int value) {
+	public void showMoneyChangeExit(int value) { //nu
 		// TODO implement here
+		System.out.println("change: "+value);
 	}
 
-	public static void showMoneyLED(int value) {
+	public static void showMoneyLED(int value) { //nu
 		// TODO implement here
+		System.out.println("moneyLED: "+value);
 	}
 
-	public void showAvailableBtnLED(String selectAvailable) {
+	public void showAvailableBtnLED(String selectAvailable) { //nu
 		// TODO implement here
+		System.out.println("AVAILABLE");
 	}
 
-	public void showSoldOutBtnLED() {
+	public void showSoldOutBtnLED() { //nu
 		// TODO implement here
+		System.out.println("SOLD OUT");
 	}
 
-	private void closeLock() {
+	private void closeLock() { //nu
 		// TODO implement here
+		System.out.println("Lock close...");
 	}
 	
-	private void openLock() {
+	private void openLock() { //nu
 		// TODO implement here
+		System.out.println("Lock open...");
 	}
 	
 	public static void repaintCoffeeButton() {

@@ -26,16 +26,18 @@ public class WaterTankManager {
     /**
      * @param waterNeeded
      */
-    public void requestWaterTank(int waterNeeded) {
+    public void requestWaterTank(int waterNeeded) { //nu
         // TODO implement here
+    	System.out.println("requestWaterTank: "+waterNeeded);
     }
 
     /**
      * @param waterNeeded 
      * @return
      */
-    public int sendWater_fromA(int waterNeeded) {
+    public int sendWater_fromA(int waterNeeded) { //nu
         // TODO implement here
+    	System.out.println("sendWater_fromA: "+waterNeeded);
         return 0;
     }
 
@@ -43,8 +45,9 @@ public class WaterTankManager {
      * @param waterNeeded 
      * @return
      */
-    public int sendWater_fromB(int waterNeeded) {
+    public int sendWater_fromB(int waterNeeded) { //nu
         // TODO implement here
+    	System.out.println("sendWater_fromB: "+waterNeeded);
         return 0;
     }
 
@@ -52,8 +55,9 @@ public class WaterTankManager {
      * @param Tank 
      * @param tankWaterNeeded
      */
-    public void provideNewWater(String Tank, int tankWaterNeeded) {
+    public void provideNewWater(String Tank, int tankWaterNeeded) { //nu
         // TODO implement here
+    	System.out.println("Tank "+Tank+" provideNewWater "+tankWaterNeeded);
     }
 
 }

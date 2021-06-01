@@ -27,52 +27,45 @@ public class WaterManager {
      */
     private Heater heater;
 
-
-
-
-
-    /**
-     * 
-     */
-    public void WaterManager() {
-        // TODO implement here
-    }
-
     /**
      * @return
      */
-    public int getAmountWaterStorage() {
+    public int getAmountWaterStorage() { //nu
         // TODO implement here
-        return 0;
+        return AmountWaterStorage;
     }
 
     /**
      * @param amountWaterStorage
      */
-    public void setAmountWaterStorage(int amountWaterStorage) {
+    public void setAmountWaterStorage(int amountWaterStorage) { //nu
         // TODO implement here
+    	AmountWaterStorage = amountWaterStorage;
     }
 
     /**
      * @param water
      */
-    private void sendWater(int water) {
+    private void sendWater(int water) { //nu
         // TODO implement here
+    	System.out.println("send water: "+ water);
     }
 
     /**
      * @return
      */
-    public static int requestWater() {
+    public static int requestWater() { //nu
         // TODO implement here
+    	System.out.println("request water...");
         return 0;
     }
 
     /**
      * @return
      */
-    public int WatercountDecrease() {
+    public int WatercountDecrease() { //nu
         // TODO implement here
+    	System.out.println("water count decrease...");
         return 0;
     }
 
