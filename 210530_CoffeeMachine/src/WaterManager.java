@@ -56,7 +56,7 @@ public class WaterManager {
      */
     public static int requestWater() { //nu
         // TODO implement here
-    	System.out.println("request water...");
+    	System.out.println("급수중입니다.");
         return 0;
     }
 

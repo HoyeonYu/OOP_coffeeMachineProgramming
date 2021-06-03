@@ -13,9 +13,7 @@ public class CupManager {
     public static int cupCountDecrease() {
         // TODO implement here
     	CupCount--;
-		System.out.println("컵이 하나 사용되었습니다.");
-		System.out.println("컵 총 개수는 " + CupCount + "입니다.");
-		System.out.println("컵 " + DropCup + "개가 떨어집니다.");
+		System.out.println("컵이 하나 사용되어, 총 " + CupCount + "개가 남았습니다.");
 		return CupCount;
     }
 

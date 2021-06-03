@@ -1,9 +1,6 @@
 
 import java.util.*;
 
-/**
- * 
- */
 public class Manufacture {
 	
 	public static boolean hasIngredient = true;
@@ -24,8 +21,15 @@ public class Manufacture {
      */
     public static Boolean mix(int water, List<Object> ingredient) { //nu
         // TODO implement here
+
+    	System.out.println("아래 재료를 섞습니다.");
     	
-    	System.out.println("mixing...");
+    	for (int i = 0; i < ingredient.size(); i++) {
+			System.out.print(ingredient.get(i) + " ");
+		}
+
+    	System.out.println();
+    	
         return true;
     }
 

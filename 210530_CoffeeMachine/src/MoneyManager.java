@@ -139,7 +139,7 @@ public class MoneyManager {
     }
     
     public static boolean notEnoughChange() {
-    	System.out.println("Current Input: " + UserPanel.currentInput);
+    	System.out.println(UserPanel.currentInput + "원을 인식했습니다.");
     	
     	if ((UserPanel.currentInput / 1000 > 0 && UserPanel.currentInput / 1000 <= count1000) ||
     		(UserPanel.currentInput / 500 > 0 && UserPanel.currentInput / 500 <= count500) ||

@@ -55,21 +55,21 @@ public class Controller {
 			public void run() {
 				try {
 					isRequestFinished=false;
-					System.out.println("1스텝");
+					System.out.println("================================================");
+					System.out.println(selection + " 제품이 선택되었습니다.");
+					System.out.println("================================================\n1단계");
 					Thread.sleep(3000);
-					System.out.println(selection + "제품이 선택되었습니다");
 					
 					CupManager.requestCup();
 					
-					System.out.println("-------- 컵 준비 완료");
+					System.out.println("컵 준비 완료!");
 					
 					Thread.sleep(3000);
 					int water = WaterManager.requestWater();
 					ingredient = DataManager.getIngredient(selection);
 					IngredientManager.requestIngredient(ingredient);
-					System.out.println("2스텝");
+					System.out.println("================================================\n2단계");
 					UserPanel.readyLight2.setText("●");
-					System.out.println("-------- 물과 재료 준비 완료");
 					
 					Thread.sleep(3000);
 					Manufacture.mix(water, ingredient);
@@ -77,8 +77,10 @@ public class Controller {
 					ImageIcon imageIcon_full = new ImageIcon(new ImageIcon("fullCoffee.png").getImage()
 							.getScaledInstance(200, 200, Image.SCALE_DEFAULT));
 					UserPanel.coffeeCupLabel.setIcon(imageIcon_full);
-					System.out.println("3스텝");
-					System.out.println("-------- 제조 완성");
+					System.out.println("================================================\n3단계");
+					System.out.println("제조 완성! 음료를 가져가십시오.");
+					System.out.println("================================================");
+					System.out.println("요청을 기다리는 중 ...");
 					
 					Thread.sleep(3000);
 					UserPanel.readyLight1.setText("O");
@@ -109,7 +111,7 @@ public class Controller {
 
 	public static void countSetText() { 
 		// TODO implement here
-		System.out.println("Setting MoneyLED...");
+		System.out.println("금액 화면을 수정합니다.");
 	}
 
 	public void countUpdate() { //nu

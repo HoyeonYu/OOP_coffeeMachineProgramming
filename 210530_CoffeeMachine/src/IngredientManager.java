@@ -18,8 +18,7 @@ public class IngredientManager {
     public static void requestIngredient(List<Object> ingredient) {
         // TODO implement here
     	for (int i = 0; i < ingredient.size(); i++) {
-			System.out.println("구성요소는 " + ingredient.get(i) + " 입니다");
-			System.out.println(ingredient.get(i) + " 벨브가 열립니다");
+			System.out.print("구성요소 " + ingredient.get(i) + "의 벨브가 열려, ");
 			decreaseIngredientCount(ingredient.get(i).toString());
 		}
 		
@@ -106,37 +105,37 @@ public class IngredientManager {
     	switch (ingredientUsed) {
 		case "PCoffee":
 			countPCoffee--;
-			System.out.println("남은 PCoffee의 분량: " + countPCoffee + "회 분입니다");
+			System.out.println("총 " + countPCoffee + "회 분이 남았습니다.");
 			break;
 
 		case "NCoffee":
 			countNCoffee--;
-			System.out.println("남은 NCoffee의 분량: " + countNCoffee + "회 분입니다");
+			System.out.println("총 " + countNCoffee + "회 분이 남았습니다.");
 			break;
 
 		case "Cream":
 			countCream--;
-			System.out.println("남은 Cream의 분량: " + countCream + "회 분입니다");
+			System.out.println("총 " + countCream + "회 분이 남았습니다.");
 			break;
 
 		case "Sugar":
 			countSugar--;
-			System.out.println("남은 Sugar의 분량: " + countSugar + "회 분입니다");
+			System.out.println("총 " + countSugar + "회 분이 남았습니다.");
 			break;
 
 		case "Yulmu":
 			countYulmu--;
-			System.out.println("남은 Yulmu의 분량: " + countYulmu + "회 분입니다");
+			System.out.println("총 " + countYulmu + "회 분이 남았습니다.");
 			break;
 
 		case "BlackTea":
 			countBlackTea--;
-			System.out.println("남은 BlackTea의 분량: " + countBlackTea + "회 분입니다");
+			System.out.println("총 " + countBlackTea + "회 분이 남았습니다.");
 			break;
 
 		case "Cocoa":
 			countCocoa--;
-			System.out.println("남은 Cocoa의 분량: " + countCocoa + "회 분입니다");
+			System.out.println("총 " + countCocoa + "회 분이 남았습니다.");
 			break;
 			
 		default:
