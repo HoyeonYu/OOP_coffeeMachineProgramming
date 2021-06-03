@@ -529,6 +529,8 @@ public class UserPanel {
 		  waterTempLED.setSize(100, 20);
 		  waterTempLED.setVisible(true);
 		  darkGrayJPanel.repaint();	
+
+		  System.out.println("요청을 기다리는 중 ...");
 		  
 		  /*************** Admin Button ***************/
 		  btnApplyAdmin.setBackground(Color.DARK_GRAY); 
@@ -539,6 +541,8 @@ public class UserPanel {
 		  btnApplyAdmin.addActionListener(new ActionListener() {
 			  @Override 
 			  public void actionPerformed(ActionEvent e) { 
+				  System.out.println("================================================");
+				  System.out.println("관리자 모드로 변경하려면 비밀번호를 입력하세요.");
 				  darkGrayJPanel.setVisible(false);
 				  
 				  JPanel darkGrayPWJPanel = new JPanel();		
@@ -595,6 +599,7 @@ public class UserPanel {
 					  @Override
 					  public void actionPerformed(ActionEvent e) {
 						  if (passwordLEDJTextPane.getText().equals(password)) {
+							  System.out.println("관리자 모드 진입!");
 							  darkGrayPWJPanel.setVisible(false);
 							  
 							  JPanel darkGrayControlJPanel = new JPanel();		
@@ -933,6 +938,7 @@ public class UserPanel {
 										  MoneyManager.count10 = Integer.parseInt(count10.getText());
 										  
 										  totalCountJTextField.setText(Integer.toString(MoneyManager.getCoinStackTotal()));
+										  System.out.println("변경사항이 저장되었습니다.");
 									  } 
 									  
 									  catch (NumberFormatException e2) {
@@ -953,6 +959,7 @@ public class UserPanel {
 							  controlAdminCloseBtn.addActionListener(new ActionListener() {
 								  @Override
 								  public void actionPerformed(ActionEvent e) {
+									  System.out.println("================================================");									  System.out.println("관리자 모드로 변경하려면 비밀번호를 입력하세요.");
 									  darkGrayControlJPanel.setVisible(false);
 									  darkGrayJPanel.setVisible(true);
 
@@ -972,6 +979,7 @@ public class UserPanel {
 						  }
 						  
 						  else {
+							  System.out.println("잘못된 비밀번호입니다. 다시 입력하세요.");
 							  passwordLEDJTextPane.setText("");
 						  }
 					  }
@@ -1222,7 +1230,7 @@ public class UserPanel {
 	public static JButton btnBlackTea = new JButton("O");
 	public static JButton btnCocoa = new JButton("O");
 	
-	private String password = "1";
+	private String password = "1234";
 	private JTextField textareaPassword = new JTextField();
 	private String passwordEntered = "";
 	
